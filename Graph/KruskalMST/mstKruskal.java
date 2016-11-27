@@ -1,5 +1,156 @@
-import java.util.*;
 import java.io.*;
+import java.util.*;
+
+
+class mstKruskal{
+
+
+public class EdgeComparator implements Comparator<Edge<Integer>>{
+
+
+	@Override
+	public int compare(Edge<Integer> edge1,Edge<Integer> edge2){
+		if(edge1.getWeight() <= edge2.getWeight()){
+			return -1;
+		}
+		else
+		{
+			return 1;
+		}
+	}
+}
+
+public List<Edge<Integer>> getMST(GraphbyMe<Integer> graph){
+
+	List<Edge<Integer>> allEdges=graph.getAllEdges();
+	EdgeComparator edgeComparator=new EdgeComparator();
+
+	Collections.sort(allEdges,edgeComparator);
+
+	DisjointSet disjointSet=new DisjointSet();
+
+	for(Vertex<Integer> vertex:graph.getAllVertex()){
+
+		disjointSet.makeSet(vertex.getId());
+	}
+
+	List<Edge<Integer>> resultEdge=new ArrayList<Edge<Integer>>();
+
+	for(Edge<Integer> edge:allEdges){
+
+		long root1=disjointSet.findSet(edge.getVertex1().getId());
+		long root2=disjointSet.findSet(edge.getVertex2().getId());
+
+		if(root1==root2){
+			continue;
+		}
+		else{
+			resultEdge.add(edge);
+			disjointSet.union(root1,root2);
+		}
+	}
+	return resultEdge;
+}
+ public static void main(String args[]) {
+        GraphbyMe<Integer> graph = new GraphbyMe<Integer>(false);
+        graph.addEdge(1, 2, 4);
+        graph.addEdge(1, 3, 1);
+        graph.addEdge(2, 5, 1);
+        graph.addEdge(2, 6, 3);
+        graph.addEdge(2, 4, 2);
+        graph.addEdge(6, 5, 2);
+        graph.addEdge(6, 4, 3);
+        graph.addEdge(4, 7, 2);
+        graph.addEdge(3, 4, 5);
+        graph.addEdge(3, 7, 8);
+        mstKruskal mst = new mstKruskal();
+        List<Edge<Integer>> result = mst.getMST(graph);
+        for (Edge<Integer> edge : result) {
+            System.out.println(edge.getVertex1() + " " + edge.getVertex2());
+        }
+    }
+
+}
+
+class DisjointSet{
+
+	private Map<Long,Node> map=new HashMap<>();
+
+	class Node{
+
+		long data;
+		Node parent;
+		int rank;
+	}
+
+/*
+
+WE have three operations here
+MakeSet
+Union 
+findSet
+*/
+
+public void makeSet(long data){
+
+Node node=new Node();
+node.data=data;
+node.parent=node;
+node.rank=0;
+map.put(data,node);
+
+}
+
+/*
+returns true if data1 and data2 are in different set else false
+*/
+public boolean union(long data1,long data2){
+
+Node node1=map.get(data1);
+Node node2=map.get(data2);
+
+Node parent1=findSet(node1);
+Node parent2=findSet(node2);
+
+if(parent1.data==parent2.data){
+
+	return false;//Union is not possible since both are in same set
+
+}
+
+//You has higher rank becomes parent 
+if(parent1.rank>=parent2.rank){
+
+parent1.rank=(parent1.rank==parent2.rank)?parent1.rank+1:parent1.rank;
+parent2.parent=parent1;
+
+}
+else{
+
+parent1.parent=parent2;
+
+}
+return true;
+
+}
+
+public long findSet(long data){
+	return findSet(map.get(data)).data;
+}
+
+private Node findSet(Node node){
+
+	Node parent=node.parent;
+	if(parent==node){
+		return parent;
+	}
+	node.parent=findSet(node.parent);
+	return node.parent;
+}
+}
+
+
+
 
 class GraphbyMe<T>{
 
