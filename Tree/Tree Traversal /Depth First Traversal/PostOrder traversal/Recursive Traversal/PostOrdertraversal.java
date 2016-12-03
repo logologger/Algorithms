@@ -63,7 +63,7 @@ class PostOrdertraversal{
 
 	public static void main(String args[]){
 
-			PostOrdertraversal tree = new PostOrdertraversal();
+		PostOrdertraversal tree = new PostOrdertraversal();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
         tree.root.right = new Node(3);
