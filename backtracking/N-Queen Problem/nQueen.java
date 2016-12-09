@@ -41,8 +41,11 @@ class nQueen{
 		}
 		int col;
 		for(col=0;col<n;col++){
-			System.out.println("row is "+row+" col is "+col);
+			
+			//System.out.println("row is "+row+" col is "+col);
 			boolean foundSafe=true;
+			//check whether it is valid for previous rows
+			//which are there in Position array p
 
 			for(int queen=0;queen<row;queen++){
 
@@ -51,6 +54,8 @@ class nQueen{
 					break;
 				}
 			}
+
+
 			if(foundSafe){
 				p[row]=new Position(row,col);
 				if(solvenQueenUtil(n,row+1,p)){
