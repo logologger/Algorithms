@@ -73,6 +73,44 @@ class Segmenttree{
 		int mid=(high+low)/2;
 		return Math.min(rangMinimumQuery(segmentTree,0,mid,qlow,qhigh,2*pos+1),rangMinimumQuery(segmentTree,mid+1,high,qlow,qhigh,2*pos+2));
 	}
+	public void updateSegmentTree(int input[],int segmentTree[],int index,int delta){
+		input[index]+=delta;
+		updateSegmentTree(segmentTree,index,delta,0,input.length-1,0);
+	}
+	public void updateSegmentTree(int segmentTree[],int index,int delta,int low,int high,int pos){
+		if(index<low || index>high){
+			return;
+		}
+		if(low==high){
+			segmentTree[pos]+=delta;
+			return;
+		}
+		int mid=(low+high)/2;
+		updateSegmentTree(segmentTree,index,delta,low,mid,2*pos+1);
+		updateSegmentTree(segmentTree,index,delta,mid+1,high,2*pos+2);
+		segmentTree[pos]=Math.min(segmentTree[2*pos+1],segmentTree[2*pos+2]);
+
+	}
+	public void updateSegmentTreeRange(int input[],int segmentTree[],int startRange,int endRange,int delta){
+		for(int i=startRange;i<=endRange;i++){
+			input[i]+=delta;
+		}
+		updateSegmentTreeRange(segmentTree,startRange,endRange,delta,0,input.length-1,0);
+	}
+	public void updateSegmentTreeRange(int segmentTree[],int startRange,int endRange,int delta,int low,int high,int pos){
+		if(low>high || startRange>high || endRange<low){
+			return;
+		}
+		if(low==high){
+			segmentTree[pos]+=delta;
+			return;
+		}
+		int middle=(high+low)/2;
+		updateSegmentTreeRange(segmentTree,startRange,endRange,delta,low,middle,2*pos+1);
+		updateSegmentTreeRange(segmentTree,startRange,endRange,delta,middle+1,high,2*pos+2);
+		segmentTree[pos]=Math.min(segmentTree[2*pos+1],segmentTree[2*pos+2]);
+
+	}
 
 	public static void main(String args[]){
 
