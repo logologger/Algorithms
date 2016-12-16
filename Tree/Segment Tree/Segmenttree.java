@@ -32,7 +32,7 @@ class Segmenttree{
 		NextPoweroftwo np2=new NextPoweroftwo();
 		int nextPoweroftwo=np2.nextPowerof2(input.length);
 
-		int segmentTree[]=new segmentTree[nextPoweroftwo*2-1];
+		int segmentTree[]=new int[nextPoweroftwo*2-1];
 		for(int i=0;i<segmentTree.length;i++){
 			segmentTree[i]=Integer.MAX_VALUE;
 		}
@@ -42,19 +42,36 @@ class Segmenttree{
 
 
 
-		return input;
-
+		
 	}
-	public int constructSegmentTree(int segmentTree[],int input[],int low,int high,int pos){
+	public void constructSegmentTree(int segmentTree[],int input[],int low,int high,int pos){
 
 //Time to construct this tree is O(n)
 		if(low==high){
 			segmentTree[pos]=input[low];
+			return;
 		}
 		int mid=(high+low)/2;
 		constructSegmentTree(segmentTree,input,low,mid,2*pos+1);
 		constructSegmentTree(segmentTree,input,mid+1,high,2*pos+2);
 		segmentTree[pos]=Math.min(segmentTree[2*pos+1],segmentTree[2*pos+2]);
+	}
+
+	public int rangMinimumQuery(int segmentTree[],int qlow,int qhigh,int len){
+		return rangMinimumQuery(segmentTree,0,len-1,qlow,qhigh,0);
+	}
+
+	public int rangMinimumQuery(int segmentTree[],int low,int high,int qlow,int qhigh,int pos){
+
+		if(qlow<=low && qhigh>=high){
+			return segmentTree[pos];//Total Overlap
+		}
+		if(qlow>high || qhigh<low){
+			return Integer.MAX_VALUE;
+		}//No Overlap
+
+		int mid=(high+low)/2;
+		return Math.min(rangMinimumQuery(segmentTree,0,mid,qlow,qhigh,2*pos+1),rangMinimumQuery(segmentTree,mid+1,high,qlow,qhigh,2*pos+2));
 	}
 
 	public static void main(String args[]){
@@ -64,7 +81,10 @@ class Segmenttree{
 		NextPoweroftwo two=new NextPoweroftwo();
 		two.nextPowerof2(23);
 
-		t.createSegmentTree(input);
+		int seg[]=t.createSegmentTree(input);
+
+		int result=t.rangMinimumQuery(seg,1,3,input.length);
+		System.out.println("Minimum between 1 and 3 is "+result);
 
 
 	}
