@@ -111,6 +111,74 @@ class Segmenttree{
 		segmentTree[pos]=Math.min(segmentTree[2*pos+1],segmentTree[2*pos+2]);
 
 	}
+	public void updateSegmentTreeRangeLazy(int input[],int segmentTree[],int lazy[],int startRange,int endRange,int delta){
+			updateSegmentTreeRangeLazy(segmentTree,lazy,startRange,endRange,delta,0,input.length-1,0);
+	}
+	//Look at private below and public above 
+	private void updateSegmentTreeRangeLazy(int segmentTree[],int lazy[],int startRange,int endRange,int delta,int low,int high,int pos){
+			if(low>high){
+				return;
+			}
+
+			if(lazy[pos]!=0){
+				segmentTree[pos]+=lazy[pos];
+				if(low!=high){
+					lazy[2*pos+1]+=lazy[pos];
+					lazy[2*pos+2]+=lazy[pos];
+				}
+				lazy[pos]=0;
+			}
+			//no overlap condition
+			if(startRange>high || endRange<low){
+				return;
+			}
+			//total overlap 
+			if(startRange<=low && endRange >=high){
+				segmentTree[pos]+=delta;
+				if(low!=high){
+					lazy[2*pos+1]+=delta;
+					lazy[2*pos+2]+=delta;
+				}
+				return;
+			}
+			int mid=(high+low)/2;
+			updateSegmentTreeRangeLazy(segmentTree,lazy,startRange,endRange,delta,low,mid,2*pos+1);
+			updateSegmentTreeRangeLazy(segmentTree,lazy,startRange,endRange,delta,mid+1,high,2*pos+2);
+			segmentTree[pos]=Math.min(segmentTree[2*pos+1],segmentTree[2*pos+2]);
+	}
+
+	public int rangMinimumQueryLazy(int segmentTree[],int lazy[],int qlow,int qhigh,int len){
+		return rangMinimumQueryLazy(segmentTree,lazy,qlow,qhigh,0,len-1,0);
+	}
+	private int rangMinimumQueryLazy(int segmentTree[],int lazy[],int qlow,int qhigh,int low,int high,int pos){
+		if(low>high){
+			return Integer.MAX_VALUE;
+		}
+
+		if(lazy[pos]!=0){
+			segmentTree[pos]+=lazy[pos];
+			if(low!=high){
+				lazy[2*pos+1]+=lazy[pos];
+				lazy[2*pos+2]+=lazy[pos];
+			}
+			lazy[pos]=0;
+		}
+		//no overlap
+		if(qlow>high || qhigh<low){
+			return Integer.MAX_VALUE;
+		}
+
+		if(qlow<=low && qhigh >=high){
+			return segmentTree[pos];
+		}
+
+		int mid=(high+low)/2;
+		return Math.min(rangMinimumQueryLazy(segmentTree,lazy,qlow,qhigh,low,mid,2*pos+1),rangMinimumQueryLazy(segmentTree,lazy,qlow,qhigh,mid+1,high,2*pos+2));
+
+
+	}
+
+
 
 	public static void main(String args[]){
 
@@ -123,6 +191,13 @@ class Segmenttree{
 
 		int result=t.rangMinimumQuery(seg,1,3,input.length);
 		System.out.println("Minimum between 1 and 3 is "+result);
+
+		 int input1[] = {-1,2,4,1,7,1,3,2};
+        int segTree1[] = t.createSegmentTree(input1);
+        int lazy1[] =  new int[segTree1.length];
+        t.updateSegmentTreeRangeLazy(input1, segTree1, lazy1, 0, 3, 1);
+        t.updateSegmentTreeRangeLazy(input1, segTree1, lazy1, 0, 0, 2);
+       System.out.println("1== "+t.rangMinimumQueryLazy(segTree1, lazy1, 3, 5, input1.length));;
 
 
 	}
