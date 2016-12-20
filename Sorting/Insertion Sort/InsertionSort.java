@@ -1,5 +1,6 @@
 import java.io.*;
 class InsertionSort{
+	//Insertion sort is a Stable Algorithm
 
 	public static void sort(int arr[]){
 		int n=arr.length;
