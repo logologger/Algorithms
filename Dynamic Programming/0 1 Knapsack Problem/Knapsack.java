@@ -2,6 +2,8 @@ import java.io.*;
 import java.util.*;
 
 
+
+
 class Knapsack{
 
 /*
@@ -23,9 +25,99 @@ Bottom Up
 
 http://stackoverflow.com/questions/6164629/dynamic-programming-and-memoization-bottom-up-vs-top-down-approaches
 
-
+Complexity is O(n*W) --n is no. of items w is total Weight
 
 	*/
+
+/*
+Key for memorization
+
+*/
+
+ class Index{
+
+	int remainingWeight;
+	int remainingItems;
+	@Override
+	public boolean equals(Object o){
+
+		if(this==o)
+			return true;
+		if(o==null || getClass()!=o.getClass()){
+			return false;
+		}
+
+		Index index=(Index)o;
+
+		if(remainingWeight!=index.remainingWeight){
+			return false;
+		}
+
+		return remainingItems==index.remainingItems;
+
+
+
+	}
+	@Override
+	public int hashCode(){
+
+		int result=remainingWeight;
+		result=31*result+remainingItems;
+
+		return result;
+
+	}
+}
+
+
+	//Top Down Approach using Memorization 
+
+public  int topDownRecursive(int values[],int weights[],int W){
+
+	Map<Index,Integer> map=new HashMap<>();
+	return topDownRecursiveUtil(values,weights,W,values.length,0,map);
+
+
+}
+
+public int topDownRecursiveUtil(int values[],int weights[],int remainingWeight,int totalItems,int currentItem,Map<Index,Integer> map){
+
+	if(currentItem>=totalItems || remainingWeight<=0){
+		return 0;
+	}
+	//Create the key to check for Memorization 
+	Index key=new Index();
+	key.remainingItems=totalItems-currentItem-1;
+	key.remainingWeight=remainingWeight;
+
+	//If the key is already there then return it's value
+
+	if(map.containsKey(key)){
+		return map.get(key);
+	}
+
+	int maxValue;
+
+	if(remainingWeight<weights[currentItem]){
+
+	 maxValue=topDownRecursiveUtil(values,weights,remainingWeight,totalItems,currentItem+1,map);
+	}
+	else{
+
+	 maxValue=Math.max(values[currentItem]+topDownRecursiveUtil(values,weights,remainingWeight-weights[currentItem],totalItems,currentItem+1,map),topDownRecursiveUtil(values,weights,remainingWeight,totalItems,currentItem+1,map));
+	}
+
+
+	//Memorize the key with values to avoid recalculation
+	map.put(key,maxValue);
+	return maxValue;
+
+}
+
+
+
+
+
 
 
 
@@ -34,7 +126,7 @@ http://stackoverflow.com/questions/6164629/dynamic-programming-and-memoization-b
 		return (a>b)?a:b;
 	}
 
-
+	//Bottom Up Approach of Knapsack Problem using Tabulation
 	public static int knapsack(int W,int wt[],int val[],int n){
 
 		if(n==0 || W==0){
@@ -61,8 +153,8 @@ http://stackoverflow.com/questions/6164629/dynamic-programming-and-memoization-b
 		}
 	}
 	//Knapsack using Dynamic Programming
-	//This is Bottom up approach used in Dynamic Programming
-	public static int knapsackDynamic(int W,int wt[],int val[],int n){
+	//This is Bottom up approach used in Dynamic Programming using Tabulation
+	public static   int knapsackDynamic(int W,int wt[],int val[],int n){
 
 		int i,w=0;
 		int K[][]=new int[n+1][W+1];
@@ -110,8 +202,11 @@ http://stackoverflow.com/questions/6164629/dynamic-programming-and-memoization-b
         int wt[] = new int[]{10, 20, 30};
     int  W = 50;
     int n = val.length;
-    System.out.println(knapsack(W, wt, val, n));
-    System.out.println(knapsackDynamic(W, wt, val, n));
+    System.out.println("Bottom Up "+knapsack(W, wt, val, n));
+    System.out.println("Bottom Up Dynamic "+knapsackDynamic(W, wt, val, n));
+
+    Knapsack k=new Knapsack();
+    System.out.println("top Down "+k.topDownRecursive(val,wt,W));
 
 
 
