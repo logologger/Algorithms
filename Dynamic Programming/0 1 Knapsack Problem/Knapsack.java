@@ -27,6 +27,10 @@ http://stackoverflow.com/questions/6164629/dynamic-programming-and-memoization-b
 
 Complexity is O(n*W) --n is no. of items w is total Weight
 
+For Top Down Explanation refer to his link 
+
+https://www.youtube.com/watch?v=149WSzQ4E1g
+
 	*/
 
 /*
