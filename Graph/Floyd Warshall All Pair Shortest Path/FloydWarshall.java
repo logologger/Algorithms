@@ -1,5 +1,11 @@
 import java.io.*;
 import java.util.*;
+/*
+
+If there is negative in diagnol in distance Matrix then Negative Cycle exist in the graph
+https://www.youtube.com/watch?v=LwJdNfdLF9s
+
+*/
 class FloydWarshall{
 
 	class NegativeCycleException extends RuntimeException{
