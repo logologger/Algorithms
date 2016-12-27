@@ -1,145 +1,139 @@
-import java.io.*;
+
+
 import java.util.*;
-class KosaRaju{
+import java.io.*;
 
 
-	/*
-		https://www.youtube.com/watch?v=RpgcYiky7uw
-
-		This Algo is written for Strongly Connected Components in a graph
-
-		http://www.geeksforgeeks.org/strongly-connected-components/
-
-		http://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/
-
-		https://github.com/mission-peace/interview/blob/master/src/com/interview/graph/TarjanStronglyConnectedComponent.java
-		
-
-	*/
-
-	public List<Set<Vertex<Integer>>> scc(Graph<Integer> graph){
-
-		Deque<Vertex<Integer>> stack=new ArrayDeque<Vertex<Integer>>();//hold vertices based on finish time
-
-		Set<Vertex<Integer>> visited=new HashSet<Vertex<Integer>>();// to hold all visited vertices
-
-		for(Vertex<Integer> vertex:graph.getAllVertex()){
-
-			if(visited.contains(vertex)){
-				continue;
-			}
-			DFSUtil(vertex,visited,stack);
+class Learning{
 
 
-		}
+    public static void main(String args[])throws IOException{
 
-        //Now reverse the edges of the graph
 
-        Graph<Integer> reverseGraph=reverseGraph(graph);
+        InputStreamReader reader=new InputStreamReader(System.in);
+        BufferedReader in=new BufferedReader(reader);
+        StringTokenizer st=null;
+        st=new StringTokenizer(in.readLine());
+        int N=Integer.parseInt(st.nextToken());
+        int M=Integer.parseInt(st.nextToken());
+        int k=Integer.parseInt(st.nextToken());
 
-        //Clear the Visited Set
-        visited.clear();
+        Graph<Integer> graph=new Graph<Integer>(false);
+
+        
+        int val[]=new int[N];
+        st=new StringTokenizer(in.readLine());
+        for(int i=0;i<N;i++){
+            val[i]=Integer.parseInt(st.nextToken());
+            //Create Vertex here
+            Vertex<Integer> v=new Vertex<Integer>(i+1);
+            v.setData(new Integer(val[i]));
+            graph.addVertex(v);
 
 
 
-		List<Set<Vertex<Integer>>> result = new ArrayList<Set<Vertex<Integer>>>();//to store the list of SSC 
+           
+        }
+        for(int i=0;i<M;i++){
+            st=new StringTokenizer(in.readLine());
+            int v1=Integer.parseInt(st.nextToken());
+            int v2=Integer.parseInt(st.nextToken());
+            graph.addEdge(v1,v2);
 
-		while(!stack.isEmpty()){
+        }
 
-            Vertex<Integer> vertex=reverseGraph.getVertex(stack.poll().getId());
-            if(visited.contains(vertex)){
-                continue;
+       
+
+        //traverse through each node and print the kth Sorted intger in descending order
+        //get all Adjacent vertex and store them in array .
+        // Sort the arnray in descending and if the kth index exist then print it else print -1
+       
+    //     Comparator<Vertex<Integer>> comparator = new Comparator<Vertex<Integer>>() {
+
+    //     @Override
+    //     public int compare(Vertex<Integer> o1, Vertex<Integer> o2) {
+    //         if(o1.id<(o2.id)) return -1;
+    //         if(o1.id>(o2.id)) return 1;
+    //         return 0;
+
+    //     }
+    // };
+
+        for(int i=1;i<=N;i++){
+            Vertex<Integer> v=graph.getVertex(i);
+
+           
+           
+             List<Vertex<Integer>> temp=new ArrayList<Vertex<Integer>>();
+             int j=0;
+             int value=100000;
+             int sec_lar=0;
+            for(Vertex<Integer> vertex:v.getAdjacentVertexes()){
+               
+                temp.add(vertex);
+                // System.out.println("Vertex data is "+vertex.getData());
+                j++;
+
+
+               // System.out.println(temp[j]);
             }
 
-            Set<Vertex<Integer>> set=new HashSet<Vertex<Integer>>();
-            DFSUtilForReverseGraph(vertex,visited,set);
-
-            result.add(set);
-
-        }
+            
 
 
-        return result;
-
-	}
-
-    private Graph<Integer> reverseGraph(Graph<Integer> graph){
-
-
-        Graph<Integer> reverseGraph=new Graph<Integer>(true);//true means it is directed // see graph class below
-
-        for(Edge<Integer> edge:graph.getAllEdges()){
-
-            reverseGraph.addEdge(edge.getVertex2().getId(),edge.getVertex1().getId(),edge.getWeight());//reverse the edges
-        }
-
-        return reverseGraph;
-    }
-
-
-	private void DFSUtil(Vertex<Integer> vertex,Set<Vertex<Integer>> visited,Deque<Vertex<Integer>> stack){
-
-
-		visited.add(vertex);
-		for(Vertex<Integer> v:vertex.getAdjacentVertexes()){
-
-			if(visited.contains(v)){
-				continue;
-			}
-			DFSUtil(v,visited,stack);
-		}
-
-		stack.offerFirst(vertex);//store vertex based on there finish time
-	}
-
-    private void DFSUtilForReverseGraph(Vertex<Integer> vertex,Set<Vertex<Integer>> visited,Set<Vertex<Integer>> set){
-
-
-        visited.add(vertex);
-        set.add(vertex);
-        for(Vertex<Integer> v:vertex.getAdjacentVertexes()){
-            if(visited.contains(v)){
-                continue;
+            if(j<k){
+                System.out.println("-1");
             }
+            else{
 
-            DFSUtilForReverseGraph(v,visited,set);
+                
+                
+
+                // for(int ctr = 0; ctr < temp.length; ctr++) {
+                //     objectArray[ctr] = Long.valueOf(temp[ctr]); // returns Integer value
+                // }
+
+                
+                Collections.sort(temp,new Comparator<Vertex<Integer>>() {
+
+                @Override
+                public int compare(Vertex<Integer> o1, Vertex<Integer> o2) {
+
+                    if(o1==null || o2==null){
+                        return 0;
+                    }
+
+                   // System.out.println(o1.getData()+" "+o2.getData());
+                    if(o1.getData().intValue()<o2.getData().intValue()) return 1;
+                    if(o1.getData().intValue()>o2.getData().intValue()) return -1;
+
+                    if(o1.getId()<o2.getId()) return 1;
+                    if(o1.getId()>o2.getId()) return -1;
+                    return 0;
+                    
+                   
+                    // System.out.println(o1);
+                    // return o1.getData().compareTo(o2.getData());
+
+
+                }
+    });
+               System.out.println(temp.get(k-1));
+                
+                //System.out.println(temp.get(1));
+            }
         }
-
+       
+       
 
 
     }
-	public static void main(String args[]){
-
-        Graph<Integer> graph = new Graph<Integer>(true);
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(1, 3);
-        graph.addEdge(3, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 3);
-        graph.addEdge(5, 6);
-
-        KosaRaju scc = new KosaRaju();
-        List<Set<Vertex<Integer>>> result = scc.scc(graph);
-
-        //print the result
-        //Need to check this for which Java Version it has started
-        result.forEach(set -> {G
-            set.forEach(v -> System.out.print(v.getId() + " "));
-            System.out.println();
-        });
-
-
-	}
 }
 
 
 
 
-
-
- class Graph<T>{
+class Graph<T>{
 
     private List<Edge<T>> allEdges;
     private Map<Long,Vertex<T>> allVertex;
@@ -233,9 +227,9 @@ class KosaRaju{
 
 class Vertex<T> {
     long id;
-    private T data;
-    private List<Edge<T>> edges = new ArrayList<Edge<T>>();
-    private List<Vertex<T>> adjacentVertex = new ArrayList<Vertex<T>>();
+     T data;
+    private List<Edge<T>> edges = new ArrayList<>();
+    private List<Vertex<T>> adjacentVertex = new ArrayList<>();
     
     Vertex(long id){
         this.id = id;
@@ -374,3 +368,5 @@ class Edge<T>{
                 + ", vertex2=" + vertex2 + ", weight=" + weight + "]";
     }
 }
+
+ 

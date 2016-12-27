@@ -1,145 +1,100 @@
-import java.io.*;
+/*
+https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm/monk-and-graph-problem/
+
+*/
+
 import java.util.*;
-class KosaRaju{
+import java.io.*;
 
 
-	/*
-		https://www.youtube.com/watch?v=RpgcYiky7uw
+//Here is the sum of degree is equal to twice the number of edges --Handshaking Lemma
 
-		This Algo is written for Strongly Connected Components in a graph
+class GraphProblem{
 
-		http://www.geeksforgeeks.org/strongly-connected-components/
-
-		http://www.geeksforgeeks.org/tarjan-algorithm-find-strongly-connected-components/
-
-		https://github.com/mission-peace/interview/blob/master/src/com/interview/graph/TarjanStronglyConnectedComponent.java
-		
-
-	*/
-
-	public List<Set<Vertex<Integer>>> scc(Graph<Integer> graph){
-
-		Deque<Vertex<Integer>> stack=new ArrayDeque<Vertex<Integer>>();//hold vertices based on finish time
-
-		Set<Vertex<Integer>> visited=new HashSet<Vertex<Integer>>();// to hold all visited vertices
-
-		for(Vertex<Integer> vertex:graph.getAllVertex()){
-
-			if(visited.contains(vertex)){
-				continue;
-			}
-			DFSUtil(vertex,visited,stack);
+	static int edges=0;
+	static int maxEdge=0;
 
 
+    public static void main(String args[])throws IOException{
+
+
+        InputStreamReader reader=new InputStreamReader(System.in);
+        BufferedReader in=new BufferedReader(reader);
+        StringTokenizer st=null;
+        st=new StringTokenizer(in.readLine());
+        int N=Integer.parseInt(st.nextToken());
+        int E=Integer.parseInt(st.nextToken());
+        
+
+        Graph<Integer> graph=new Graph<Integer>(false);
+
+		 for(int i=1;i<=N;i++){
+
+			 Vertex<Integer> v=new Vertex<Integer>(i);
+			 graph.addVertex(v);
 		}
 
-        //Now reverse the edges of the graph
 
-        Graph<Integer> reverseGraph=reverseGraph(graph);
+        for(int i=1;i<=E;i++){
+            st=new StringTokenizer(in.readLine());
+            int v1=Integer.parseInt(st.nextToken());
+            int v2=Integer.parseInt(st.nextToken());
+            graph.addEdge(v1,v2);
 
-        //Clear the Visited Set
-        visited.clear();
+        }
+
+       
+        //Lets Run DFS here 
 
 
+        Set<Vertex<Integer>> visited = new HashSet<>();
 
-		List<Set<Vertex<Integer>>> result = new ArrayList<Set<Vertex<Integer>>>();//to store the list of SSC 
 
-		while(!stack.isEmpty()){
-
-            Vertex<Integer> vertex=reverseGraph.getVertex(stack.poll().getId());
-            if(visited.contains(vertex)){
+         for (Vertex<Integer> vertex : graph.getAllVertex()) {
+            if (visited.contains(vertex)) {
                 continue;
             }
 
-            Set<Vertex<Integer>> set=new HashSet<Vertex<Integer>>();
-            DFSUtilForReverseGraph(vertex,visited,set);
-
-            result.add(set);
-
+           
+         
+           
+            DFSUtil(vertex, visited);
+          
+             maxEdge=Math.max(maxEdge,edges/2);//handshaking Lemma concept here
+           
+            edges=0;
+            
+           
         }
+        System.out.println(maxEdge);
 
-
-        return result;
-
-	}
-
-    private Graph<Integer> reverseGraph(Graph<Integer> graph){
-
-
-        Graph<Integer> reverseGraph=new Graph<Integer>(true);//true means it is directed // see graph class below
-
-        for(Edge<Integer> edge:graph.getAllEdges()){
-
-            reverseGraph.addEdge(edge.getVertex2().getId(),edge.getVertex1().getId(),edge.getWeight());//reverse the edges
-        }
-
-        return reverseGraph;
     }
 
 
-	private void DFSUtil(Vertex<Integer> vertex,Set<Vertex<Integer>> visited,Deque<Vertex<Integer>> stack){
+    
+	 private static void DFSUtil(Vertex<Integer> vertex,
+            Set<Vertex<Integer>> visited) {
 
+	
 
-		visited.add(vertex);
-		for(Vertex<Integer> v:vertex.getAdjacentVertexes()){
-
-			if(visited.contains(v)){
-				continue;
-			}
-			DFSUtil(v,visited,stack);
-		}
-
-		stack.offerFirst(vertex);//store vertex based on there finish time
-	}
-
-    private void DFSUtilForReverseGraph(Vertex<Integer> vertex,Set<Vertex<Integer>> visited,Set<Vertex<Integer>> set){
-
+	 	
 
         visited.add(vertex);
-        set.add(vertex);
-        for(Vertex<Integer> v:vertex.getAdjacentVertexes()){
-            if(visited.contains(v)){
+        for (Vertex<Integer> v : vertex.getAdjacentVertexes()) {
+        	edges++;//counting Degree--- inDedgree and outDegree
+            if (visited.contains(v)) {
                 continue;
             }
-
-            DFSUtilForReverseGraph(v,visited,set);
+            DFSUtil(v, visited);
         }
-
-
-
+       
     }
-	public static void main(String args[]){
-
-        Graph<Integer> graph = new Graph<Integer>(true);
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 2);
-        graph.addEdge(2, 0);
-        graph.addEdge(1, 3);
-        graph.addEdge(3, 4);
-        graph.addEdge(4, 5);
-        graph.addEdge(5, 3);
-        graph.addEdge(5, 6);
-
-        KosaRaju scc = new KosaRaju();
-        List<Set<Vertex<Integer>>> result = scc.scc(graph);
-
-        //print the result
-        //Need to check this for which Java Version it has started
-        result.forEach(set -> {G
-            set.forEach(v -> System.out.print(v.getId() + " "));
-            System.out.println();
-        });
-
-
-	}
 }
 
 
 
 
-
-
- class Graph<T>{
+class Graph<T>{
 
     private List<Edge<T>> allEdges;
     private Map<Long,Vertex<T>> allVertex;
@@ -233,9 +188,9 @@ class KosaRaju{
 
 class Vertex<T> {
     long id;
-    private T data;
-    private List<Edge<T>> edges = new ArrayList<Edge<T>>();
-    private List<Vertex<T>> adjacentVertex = new ArrayList<Vertex<T>>();
+     T data;
+    private List<Edge<T>> edges = new ArrayList<>();
+    private List<Vertex<T>> adjacentVertex = new ArrayList<>();
     
     Vertex(long id){
         this.id = id;
@@ -374,3 +329,5 @@ class Edge<T>{
                 + ", vertex2=" + vertex2 + ", weight=" + weight + "]";
     }
 }
+
+ 
