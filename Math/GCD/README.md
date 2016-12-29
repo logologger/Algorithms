@@ -1,0 +1,1 @@
+ GCD(A,B)=GCD(B,A%B).
