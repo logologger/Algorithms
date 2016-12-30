@@ -1,5 +1,16 @@
 import java.io.*;
 import java.util.*;
+
+/*
+
+Total Complexity is O(m+n) as compared to naive which is 
+O(m*n)
+
+https://www.youtube.com/watch?v=GTJr8OvyEVQ
+
+
+
+*/
 class KMP{
 	public static void main(String args[])throws IOException{
 
