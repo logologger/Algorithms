@@ -80,12 +80,16 @@ public class Edgecount{
 }
 public static int dfs(int start)
 {
+
+	System.out.println(Arrays.toString(value) +"     "+start);
 	visited[start]=true;
 	if(value[start]!=1)
 		return value[start];
+	System.out.println(al[start]);
 	for(int i=0;i<al[start].size();i++)
 	{
 		int temp=(int)al[start].get(i);
+		//System.out.println("temp is "+temp);
 		if(!visited[temp])
 			value[start]+=dfs(temp);
 	}
