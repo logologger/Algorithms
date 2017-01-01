@@ -2,6 +2,12 @@ import java.io.*;
 import java.util.*;
 class Rabin{
 
+	/*
+		https://www.youtube.com/watch?v=H4VrKHVG5qI
+		Wrst case is O(mn) best and average case is O(m+n)
+
+	*/
+
 	private int prime=101;
 	public int patternSearch(char[] text,char[] pattern){
 		int m=pattern.length;
