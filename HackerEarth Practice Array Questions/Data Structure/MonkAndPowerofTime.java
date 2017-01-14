@@ -13,19 +13,65 @@ class MonkAndPowerofTime{
 		//int callingOrder[]=new int[N];
 		//int idealOrder[]=new int[N];
 		N=scan.scanInt();
-		Queue<Integer> callOrder=new Queue<>();
-		Queue<Integer> idealOrder=new Queue<>();
+		Deque<Integer> callOrder=new ArrayDeque<>();
+		Deque<Integer> idealOrder_q=new ArrayDeque<>();
+		int idealOrder[]=new int[N];
 		for(int i=0;i<N;i++){
 
 			callOrder.add(scan.scanInt());
 		}
 		for(int i=0;i<N;i++){
+			idealOrder[i]=scan.scanInt();
+			idealOrder_q.add(idealOrder[i]);
 			
-			idealOrder.add(scan.scanInt());
 		}
+		int result=0;
+		//System.out.println(callOrder);
 
 		
 		//Make a Queue then see what happens
+		int p=0;
+		int ide_element;
+		int call_element;
+		
+		while(true){
+			
+
+			 ide_element=idealOrder[p];
+			 call_element=(int)callOrder.peek();
+			 //System.out.println(ide_element+" : "+call_element);
+
+
+			// System.out.println(call_element==ide_element);
+			// p++;
+			// System.out.println(callOrder);
+			if(ide_element==call_element){
+
+				//System.out.println("Match");
+				result++;
+
+				
+				int first=callOrder.poll();
+				//callOrder.add(first);
+				//System.out.println(callOrder);
+				p++;//increase p only when elements match
+
+				if(callOrder.peek()==null)
+					break;
+
+
+
+			}
+			else{
+				//System.out.println("Not Matched");
+				result++;//swapping takes one unit time
+				int first=callOrder.poll();
+				callOrder.add(first);
+
+
+			}
+		}
+		System.out.println(result);
 
 
 		
