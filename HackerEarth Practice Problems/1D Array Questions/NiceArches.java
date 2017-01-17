@@ -10,21 +10,49 @@ class NiceArches{
 		//
 		int t=scan.scanInt();
 		int result=0;
+		
 		while(t-->0){
 			String s=scan.scanString();
 			//Apply logic here
-			
-			if(s.length()%2!=0){
+			Stack<Character> stack=new Stack<>();
+			if((s.length()%2)!=0){
 				//nothing to do 
 				//odd length is not allowed according to the question
 			}
 			else{
 				//length is even then it's eligible here
 				//the number of A should be equal to number of B's
-				
+				for(int i=0;i<s.length();i++){
+					char ch=s.charAt(i);
+					Character c=new Character(ch);
+					if(!stack.isEmpty()){
 
-			}
+						if(stack.peek().compareTo(c)==0){
+							stack.pop();
+						}
+						else{
+							stack.add(c);
+						}
+
+
+					}
+					else{
+						stack.add(c);
+					}
+
+
+
+				}
+				if(stack.isEmpty()){
+					result++;
+				}
+
+			}//end of else
+
+			
+
 		}
+		System.out.println(result);
 		
 		
 }//End of main function 
