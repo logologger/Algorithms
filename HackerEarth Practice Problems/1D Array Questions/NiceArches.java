@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-class MonkRotation{
+class NiceArches{
 	public static void main(String args[])throws IOException{
 
 		
@@ -8,34 +8,24 @@ class MonkRotation{
 		Print print=new Print();
 		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
 		//
-		int T=scan.scanInt();
-		while(T-->0){
-			int N=scan.scanInt();
-			int K=scan.scanInt();
-			int a[]=new int[N];
-			Deque<Integer> d=new ArrayDeque<>();
-			for(int i=0;i<N;i++){
-
-
-				a[i]=scan.scanInt();
-				d.add(a[i]);
-			}
-			if(N%K==0){
-				for(int i=0;i<N;i++){
-				System.out.print(d.poll()+" ");
-			}
-				
+		int t=scan.scanInt();
+		int result=0;
+		while(t-->0){
+			String s=scan.scanString();
+			//Apply logic here
+			
+			if(s.length()%2!=0){
+				//nothing to do 
+				//odd length is not allowed according to the question
 			}
 			else{
-			for(int i=0;i<K;i++){
-				d.offerFirst(d.removeLast());
+				//length is even then it's eligible here
+				//the number of A should be equal to number of B's
+				
 
 			}
-			for(int i=0;i<N;i++){
-				System.out.print(d.poll()+" ");
-			}
 		}
-		}
+		
 		
 }//End of main function 
 }//End of Class
