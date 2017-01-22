@@ -32,12 +32,13 @@ class AmazingRace{
 				int before=0;
 				for(int j=i-1;j>=0;j--){
 						//System.out.println(a[i]+"   "+a[j]);
-						if(a[i]>=a[j]){
+						if(a[i]>a[j]){
 							before++;
 							//System.out.println(a[i]+"   "+a[j]);
 							//System.out.println(before+" what  "+i+" j="+j);
 						}
 						else{
+							before++;
 							break;
 						}
 
@@ -47,20 +48,21 @@ class AmazingRace{
 				//after elements
 				for(int j=i+1;j<N;j++){
 
-					if(a[i]>=a[j]){
+					if(a[i]>a[j]){
 							before++;
 						}
 
 						else{
+							before++;
 							break;
 						}
 
 
 				}
-				//System.out.println(before);
+				//System.out.println("Case "+i+": "+before);
 				int index=i;
-				int max=before;
-				int sight=(index+1)*max;
+				int max=before==0?1:before;
+				int sight=((index+1)*max)%1000000007;
 				//System.out.println(index+":"+sight+"  "+sight);
 				if(sight>max_sight){
 					max_sight=sight;
