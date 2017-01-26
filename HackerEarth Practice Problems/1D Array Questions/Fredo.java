@@ -14,6 +14,10 @@ class Fredo{
 			a[i]=scan.scanString();
 		}
 		Map<String,Integer> countMap=new LinkedHashMap<>();
+		//Another way to find count of integer in an array using HashMap instead of creating an array
+		//of length 10^18 . we are using hashmap to store the count along with the number
+
+		//you can also find that i have used Java 8 arrow function (same as in ES6 javascript)
 		for(String ch:a){
 
 			countMap.compute(ch,(key,val)->{
