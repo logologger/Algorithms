@@ -17,10 +17,10 @@ class Subsetbacktracking{
 
 
 		Subsetbacktracking p=new Subsetbacktracking();
-		p.permute("AABC".toCharArray());
+		p.permute("ABC".toCharArray());
 
 	}
-	public List<String> permute(char input[]){
+	public void permute(char input[]){
 
 		//TreeMap is used for HashMap in Sorted Order
 		//HashMap does not have any order of storing elements
@@ -81,6 +81,7 @@ class Subsetbacktracking{
 		//https://www.youtube.com/watch?v=xTNFs5KRV_g&list=PLrmLmBdmIlpslxZUHHWmfOzNn6cA7jvyh&index=3
 		count[i]++;//moving up the recursion increase it
 
+		}
 	}
 	private void printArray(char input[],int pos){
 		for(int i=0;i<pos;i++){
