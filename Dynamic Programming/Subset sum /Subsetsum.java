@@ -23,6 +23,9 @@ class Subsetsum{
  * Time complexity - O(input.size * total_sum)
  * Space complexity - O(input.size*total_sum)
 
+
+For the path Solution is here--means how to find which aray elements make subset
+https://www.youtube.com/watch?v=s6FhG--P7z0
 		*/
 	}
 
