@@ -6,6 +6,7 @@
     import java.util.LinkedHashMap;
     import java.util.Map.Entry;
     import java.util.TreeMap;
+    import java.util.*;
     /*
 
     http://stackoverflow.com/questions/40690034/number-of-subsets-of-an-array-size-n-of-size-k-having-difference-between-maxim
@@ -16,8 +17,13 @@
     */
      
     class Numbergame {
+
+    	static int MAX=500001;
+    	static long MOD=(long)Math.pow(10,9)+7L;
+    	static long factorial[]=new long[MAX];
      
     	public static void main(String[] args) throws IOException {
+    		calculateAllFactorial();
     	
     		Reader in = new Reader();
     		//OutputStream out = new BufferedOutputStream ( System.out );
@@ -29,25 +35,102 @@
     		for(int i=0;i<N;i++){
     			A[i]=in.nextInt();
     		}
-    		boolean[] B = new boolean[A.length];
+    		Arrays.sort(A);
+    		long res=0;
+    		for(int i=0;i<N;i++){
+    			int e=X+A[i];
+    			int ind=right_most_binary_search(A,0,N,N,e);
+    			//System.out.println(ind);
+    			if(ind-i<K-1){
+    				if(ind==N)
+    					break;
+    				//continue;
+    			}
+    			System.out.println((ind-i)+"  "+(K-1));
+    			res+=combination(ind-i,K-1);
+    			//System.out.println(combination(ind-i,K-1));
+    			res=res%MOD;
+    		}
+    		System.out.println(res);
 
-    		subset(A,K,0,0,B);
 
 
-
-
-            //String option is missing here
     		
-    		//int n = in.nextInt(); for int scanning
-    		
-    			//temp=in.nextLong();  //for long
-    			
-     
-    	   	
-    			//	out.println("0");   //for printing
+
+
+
+
+
+
+            
     						
     		out.close();
     	}
+
+    	public static int right_most_binary_search(int a[],int l,int r,int n,int e){
+    		int m;
+    		while((r-l)>1){
+
+    			m=l+(r-l)/2;
+
+    			if(a[m]<=e){
+    				l=m;
+    			}
+    			else{
+    				r=m;
+    			}
+
+    		}
+    		if(l==n || a[l]>e){
+    			return l-1;
+    		}
+
+    		return l;
+
+
+    	}
+
+    	public static void calculateAllFactorial(){
+
+    		factorial[0]=1;
+    		for(int i=1;i<MAX;i++){
+
+    			factorial[i]=(factorial[i-1]*i)%MOD;
+    		}
+
+    	}
+
+    	public static long combination(int n,int r){
+
+    		if(r>n){
+    			return 0;
+    		} 
+    		long numerator=factorial[n];
+    		long denominator=(factorial[n-r]*factorial[r])%MOD;
+    		//System.out.println(numerator+" "+denominator);
+    		denominator=power(denominator,MOD-2);
+    		//System.out.println(numerator+" "+denominator);
+    		return (numerator*denominator)%MOD;
+
+    	}
+
+    	public static long power(long x,long n){
+
+    		if(n==0)
+    			return 1;
+    		if(n==1)
+    			return x;
+    		long t=power(x,n/2);
+    		t=(t*t)%MOD;
+    		return (t*power(x,n%2))%MOD;
+
+    	}
+
+
+
+
+
+    	//Calculate subset of element of given size K from Array A --Recursive approach
     	public void subset(int A[],int k,int start,int curLen,boolean used[]){
 
 		if(curLen==k){//Here we got the subset of length k
