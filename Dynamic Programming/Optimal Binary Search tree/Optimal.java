@@ -29,13 +29,13 @@ class Optimal{
 
 		//Now we will consider chains of length 2,3,4...
 		for(int l=2;l<=input.length;l++){
-			for(int i=0;i<=input.length;i++){//i for rows
+			for(int i=0;i<=input.length-l;i++){//i for rows
 				int j=i+l-1;// j is the column
 				T[i][j]=Integer.MAX_VALUE;
 				int sum=getSum(freq,i,j);
 
 				for(int k=i;k<=j;k++){
-					int val=sum+(k-1<i?0:T[k+1][j])+(k+1>j?0:T[k+1][j]);
+					int val=sum+(k-1<i?0:T[i][k-1])+(k+1>j?0:T[k+1][j]);
 					//Take k as root so everything from i to k-1 plus k+1 to j
 					if(val<T[i][j]){
 						T[i][j]=val;
@@ -57,7 +57,7 @@ class Optimal{
 		return sum;
 	}
 	public int minCostRec(int input[],int freq[]){
-		return minCost(input,freq,0,input.length-1,1);//last one is level
+		return minCostRec(input,freq,0,input.length-1,1);//last one is level
 	}
 
 	public int minCostRec(int input[],int freq[],int low,int high,int level){
