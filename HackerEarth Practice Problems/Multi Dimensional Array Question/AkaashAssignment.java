@@ -7,6 +7,7 @@
     import java.util.Map.Entry;
     import java.util.*;
      
+     //This input Class is not suitable for reading large inputs of string
     class AkaashAssignment {
      
     	public static void main(String[] args) throws IOException {
@@ -18,21 +19,60 @@
 
             int n=in.nextInt();
             int q=in.nextInt();
-            String s=in.readLine();
+           // String s=in.readLine();
             StringBuilder sb=new StringBuilder();
+            int arr[][]=new int[26][n+1];
+            for(int i=1;i<=n;i++){
+            	String ch=in.readLine();
+            	int pos=ch.charAt(0)-'a';
+
+            	arr[pos][i]++;
+            	//copy from i to n
+            	for(int j=i+1;j<=n;j++){
+            		arr[pos][j]++;
+            	}
+
+            }
+            // for(int i=0;i<26;i++){
+            // 	for(int j=0;j<n;j++){
+            // 		System.out.print(arr[i][j]+" ");
+            		
+            // 	}
+            // 	System.out.println();
+            		
+            // 	}
+
             
             for(int i=0;i<q;i++){
             	int start=in.nextInt();
             	int end=in.nextInt();
             	int K=in.nextInt();
-            	String sub=s.substring(start-1,end);
-            	char[] subarr=sub.toCharArray();
-            	Arrays.sort(subarr);
-            	if(K>0 && K<=subarr.length)
-            	sb.append(subarr[K-1]+"\n");
+            	int result=0;
+            	char ans='a';
+            	int ind=0;
+            	int k=0;
+            	if(K>0 && K<=end-start+1){
+            	
+            	for(k=0;(K>(arr[k][end]-arr[k][start-1])) && k<26;k++){
+            		K=K-(arr[k][end]-arr[k][start-1]);
+
+            		if(K<0){
+            			break;
+            		}
+
+
+            	}
+            	ans=(char)(k+'a');
+            	
+            	System.out.println(ans);
+            	//System.out.println(ans);
+            }
+            	
+            	//Arrays.sort(subarr);
+            	
             
             	else
-            	sb.append("Out of range\n");
+            	System.out.println("Out of range");
             
             }
             System.out.println(sb.toString());
@@ -60,7 +100,7 @@
     		}
      
     		public String readLine() throws IOException{
-    			byte[] buf = new byte[500000]; // line length
+    			byte[] buf = new byte[1]; // line length
     			int cnt = 0, c;
     			while ((c = read()) != -1){
     				if (c == '\n')
