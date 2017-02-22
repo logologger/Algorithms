@@ -6,7 +6,7 @@ class JumptoReachEnd{
 	}
 	public int minJump(int arr[],int result[]){
 		int jump[]=new int[arr.length];
-		jump[0];
+		jump[0]=0;
 		for(int i=1;i<arr.length;i++){
 			jump[i]=Integer.MAX_VALUE-1;
 		}
