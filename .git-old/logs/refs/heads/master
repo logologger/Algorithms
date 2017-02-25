@@ -1,0 +1,94 @@
+0000000000000000000000000000000000000000 1840271c396789dbeedca528aa9716e05cceb812 razzcoder <rajatsbhadauria@gmail.com> 1479843760 +0530	commit (initial): algo graph
+1840271c396789dbeedca528aa9716e05cceb812 87b05ae2f940974650e26bf55e64f2abfaf992aa razzcoder <rajatsbhadauria@gmail.com> 1479924745 +0530	commit: Heap Data Structure Implemented
+87b05ae2f940974650e26bf55e64f2abfaf992aa 3a6d8f57da1c0da9b82c91b902be0efa5a7b5c87 razzcoder <rajatsbhadauria@gmail.com> 1480172261 +0530	commit: Djikstra and Graph and Heap Plus Map Implemented
+3a6d8f57da1c0da9b82c91b902be0efa5a7b5c87 3a4b6a87fdbe1f19438fa7dd9eaef6ce1e44b27d razzcoder <rajatsbhadauria@gmail.com> 1480173026 +0530	commit: Some Changes
+3a4b6a87fdbe1f19438fa7dd9eaef6ce1e44b27d 14df9cad1d93a788f56d52db83528ba57c2263f4 razzcoder <rajatsbhadauria@gmail.com> 1480193869 +0530	commit: Prim algo added
+14df9cad1d93a788f56d52db83528ba57c2263f4 ebd826a91add3c041f4136623090af25b282fa2c razzcoder <rajatsbhadauria@gmail.com> 1480193902 +0530	commit: Prim algo added
+ebd826a91add3c041f4136623090af25b282fa2c d6913e9f7d4f5fce7af6ac8ce8b7622ce81431e2 razzcoder <rajatsbhadauria@gmail.com> 1480196006 +0530	commit: Bipartite Graph Checking added here
+d6913e9f7d4f5fce7af6ac8ce8b7622ce81431e2 29f91e24665ced89be2cf0ff0439e36a2cafba89 razzcoder <rajatsbhadauria@gmail.com> 1480274202 +0530	commit: Added Disjoint Set for Kruskal Algo
+29f91e24665ced89be2cf0ff0439e36a2cafba89 408ebdb2a640e34c00e8d480539dc2ba3c5382ea razzcoder <rajatsbhadauria@gmail.com> 1480276510 +0530	commit: Added Disjoint Set for Kruskal Algo
+408ebdb2a640e34c00e8d480539dc2ba3c5382ea d873a015882242aff1ba2feae2a847e2732be5da razzcoder <rajatsbhadauria@gmail.com> 1480470950 +0530	commit: Graph Folder Restructured
+d873a015882242aff1ba2feae2a847e2732be5da 914485838b0e66a72aba50233af631c946be710d razzcoder <rajatsbhadauria@gmail.com> 1480476670 +0530	commit: Bellman Ford Algorithm Implemented
+914485838b0e66a72aba50233af631c946be710d 3ca35dd439cfb91c1705485925a22f83f1b3ffbc razzcoder <rajatsbhadauria@gmail.com> 1480476687 +0530	commit: Bellman Ford Algorithm Implemented
+3ca35dd439cfb91c1705485925a22f83f1b3ffbc 8bb2e6224a4675c98ff0d3845e8a788d51d26662 razzcoder <rajatsbhadauria@gmail.com> 1480566228 +0530	commit: Height of a tree
+8bb2e6224a4675c98ff0d3845e8a788d51d26662 8ccbb7a1fd2c50b39a62cc26eb714795d1669991 razzcoder <rajatsbhadauria@gmail.com> 1480566247 +0530	commit: Height of a tree
+8ccbb7a1fd2c50b39a62cc26eb714795d1669991 f8ad5b64a845f24329f992ae809030451c80f1e8 razzcoder <rajatsbhadauria@gmail.com> 1480747126 +0530	commit: Binary tree
+f8ad5b64a845f24329f992ae809030451c80f1e8 bbff82d175e61fb6f280cfff00ccb2c0f0f360e5 razzcoder <rajatsbhadauria@gmail.com> 1480749942 +0530	commit: Traversal Folder created
+bbff82d175e61fb6f280cfff00ccb2c0f0f360e5 d20d72b2bcdf9ac8b51fae3ba542d4848e80aca8 razzcoder <rajatsbhadauria@gmail.com> 1480781098 +0530	commit: Added traversal Iterative programs
+d20d72b2bcdf9ac8b51fae3ba542d4848e80aca8 2e0f85c7d02f319eb9ca13ede20f5239bcde4228 razzcoder <rajatsbhadauria@gmail.com> 1480789060 +0530	commit: Level order traversal in Tree
+2e0f85c7d02f319eb9ca13ede20f5239bcde4228 f9cf13c3e5a36640b3b0b83e886d8dfdc930b960 razzcoder <rajatsbhadauria@gmail.com> 1480837915 +0530	commit: Morris inorder TRaversal'
+f9cf13c3e5a36640b3b0b83e886d8dfdc930b960 c0982e2c3496fc7d404d4761baaa90bf21e39790 razzcoder <rajatsbhadauria@gmail.com> 1480958031 +0530	commit: tree updated with other programs like size ,leaf count and other level order
+c0982e2c3496fc7d404d4761baaa90bf21e39790 8d0a769deb504504e9435b7b100485a498cdb825 razzcoder <rajatsbhadauria@gmail.com> 1480958095 +0530	commit: tree updated with other programs like size ,leaf count and other level order
+8d0a769deb504504e9435b7b100485a498cdb825 920267b265d5204a43599b51b3123aaa15fd8825 razzcoder <rajatsbhadauria@gmail.com> 1480983308 +0530	commit: Check if Binary tree is BST or not
+920267b265d5204a43599b51b3123aaa15fd8825 cd9aade9a10a94327f90d11c97a3af239bd0f831 razzcoder <rajatsbhadauria@gmail.com> 1481259774 +0530	commit: nQueen added
+cd9aade9a10a94327f90d11c97a3af239bd0f831 78834fac3865d0ac1f801c7b8f92ab2363f9bcf5 razzcoder <rajatsbhadauria@gmail.com> 1481261252 +0530	commit: nQueen added
+78834fac3865d0ac1f801c7b8f92ab2363f9bcf5 da276f2fdae87103debc50f4a900c11e691cd176 razzcoder <rajatsbhadauria@gmail.com> 1481264401 +0530	commit: Maximum Histogram Area Problem
+da276f2fdae87103debc50f4a900c11e691cd176 39e05ef59fae8fe1df1f0b65c7c15f8be82e9b71 razzcoder <rajatsbhadauria@gmail.com> 1481301302 +0530	commit: Added Rat in a maze backtrack algo
+39e05ef59fae8fe1df1f0b65c7c15f8be82e9b71 b71ab1154e51d564bf5b9b1ba1d5e173a072bb1c razzcoder <rajatsbhadauria@gmail.com> 1481306979 +0530	commit: AVL tree implemented using left and right rotation logic
+b71ab1154e51d564bf5b9b1ba1d5e173a072bb1c 365be7fc0d17a469c7bebe420f52bb9730054a9a razzcoder <rajatsbhadauria@gmail.com> 1481307000 +0530	commit: AVL tree implemented using left and right rotation logic
+365be7fc0d17a469c7bebe420f52bb9730054a9a d218fe6fc9ed6bbfd1bddca07cbaa6a859aa6c51 razzcoder <rajatsbhadauria@gmail.com> 1481783158 +0530	commit: Segment tree started
+d218fe6fc9ed6bbfd1bddca07cbaa6a859aa6c51 a2b078d47398b5e8667710ddff55d7ce88ad069c razzcoder <rajatsbhadauria@gmail.com> 1481865391 +0530	commit: RangeMinimum Query Added
+a2b078d47398b5e8667710ddff55d7ce88ad069c a67beb5cc994edb69229fc5c6097627ab6028291 razzcoder <rajatsbhadauria@gmail.com> 1481868193 +0530	commit: update segment tree added
+a67beb5cc994edb69229fc5c6097627ab6028291 8bef95f344e5ae4d130d8aad6d6c676b1bd48fa9 razzcoder <rajatsbhadauria@gmail.com> 1481976989 +0530	commit: Added Lazy Propogation in Segment Tree
+8bef95f344e5ae4d130d8aad6d6c676b1bd48fa9 3b2f3811121e88ad216b609fd14f816fcc398ae5 razzcoder <rajatsbhadauria@gmail.com> 1482002627 +0530	commit: Insertion Sort Code Added
+3b2f3811121e88ad216b609fd14f816fcc398ae5 7d5e2424fef9c7c7620f4607ade87bcb79fe9eb9 razzcoder <rajatsbhadauria@gmail.com> 1482002640 +0530	commit: Insertion Sort Code Added
+7d5e2424fef9c7c7620f4607ade87bcb79fe9eb9 d773de8f89db04c8e8e068410043de1a79c0f0c1 razzcoder <rajatsbhadauria@gmail.com> 1482003081 +0530	commit: Added Bubble Sort
+d773de8f89db04c8e8e068410043de1a79c0f0c1 c9f29b5c0540f842030aec66dd24595f744c8ed9 razzcoder <rajatsbhadauria@gmail.com> 1482003741 +0530	commit: Selection Sort Added
+c9f29b5c0540f842030aec66dd24595f744c8ed9 44b1fdbed60d1b608fe8b6f14344bdc7bf3f7e73 razzcoder <rajatsbhadauria@gmail.com> 1482086628 +0530	commit: Added Coutninting Sort
+44b1fdbed60d1b608fe8b6f14344bdc7bf3f7e73 9b50ab2831b30ec4721027972e37aff219f65112 razzcoder <rajatsbhadauria@gmail.com> 1482123536 +0530	commit: Added Merge Sort
+9b50ab2831b30ec4721027972e37aff219f65112 01f8f08773cd9c591c46981da938a44517101a92 razzcoder <rajatsbhadauria@gmail.com> 1482211097 +0530	commit: Added QuickSort
+01f8f08773cd9c591c46981da938a44517101a92 756a7c4b71fce0f022c4b2b89d49d6836f890a6b razzcoder <rajatsbhadauria@gmail.com> 1482259413 +0530	commit: Added Heap Sort
+756a7c4b71fce0f022c4b2b89d49d6836f890a6b 3c6f729f107e19f29ab4a7b3070dbd20275070c3 razzcoder <rajatsbhadauria@gmail.com> 1482380000 +0530	commit: Added FenwFenwick Tree
+3c6f729f107e19f29ab4a7b3070dbd20275070c3 bd442b150002c0d9dbf4c4e6af2a303db72077b9 razzcoder <rajatsbhadauria@gmail.com> 1482427426 +0530	commit: Added Linear and Binary Search
+bd442b150002c0d9dbf4c4e6af2a303db72077b9 06d4a36ec32c06191ee578befb21630d8eefeda3 razzcoder <rajatsbhadauria@gmail.com> 1482515993 +0530	commit: Added KnapsackProblem using Bottom Up approach
+06d4a36ec32c06191ee578befb21630d8eefeda3 97b3d4b062f43849a89fe83a4103a78a638d3e02 razzcoder <rajatsbhadauria@gmail.com> 1482516004 +0530	commit: Added KnapsackProblem using Bottom Up approach
+97b3d4b062f43849a89fe83a4103a78a638d3e02 487cb106532d0a94ebe19bf124ff84295aa40a73 razzcoder <rajatsbhadauria@gmail.com> 1482591995 +0530	commit: Added top Down Approach for Knapsack Programming
+487cb106532d0a94ebe19bf124ff84295aa40a73 a6f1cb0fe5b41c6a0bafbb4e6d93c085eb7cf145 razzcoder <rajatsbhadauria@gmail.com> 1482668632 +0530	commit: Added Floyd yd Warshall Shortest Path
+a6f1cb0fe5b41c6a0bafbb4e6d93c085eb7cf145 062f43fb9d445cfe889e3afee752e5020a58c639 razzcoder <rajatsbhadauria@gmail.com> 1482668740 +0530	commit: Added Floyd yd Warshall Shortest Path
+062f43fb9d445cfe889e3afee752e5020a58c639 098dcd6b67157d2fe0aaeca413d2dde6a3eea880 razzcoder <rajatsbhadauria@gmail.com> 1482729671 +0530	commit: Added KosaRaju Algo for Strongly Connected Components
+098dcd6b67157d2fe0aaeca413d2dde6a3eea880 2156a2900a1144c9ff91e828261f2fdb810566fc razzcoder <rajatsbhadauria@gmail.com> 1482861222 +0530	commit: Code Monk Practice from Graph
+2156a2900a1144c9ff91e828261f2fdb810566fc 2156a38866da5b5000f24333d295aadd7dd572d6 razzcoder <rajatsbhadauria@gmail.com> 1482989310 +0530	commit: Added gcd and other math
+2156a38866da5b5000f24333d295aadd7dd572d6 eac5c0cc29dc396b3111558a7eafd72b752eee15 razzcoder <rajatsbhadauria@gmail.com> 1482989732 +0530	commit: Added README
+eac5c0cc29dc396b3111558a7eafd72b752eee15 868ea6567bf5bff9be61d0bdb4d99fc6439d62fd razzcoder <rajatsbhadauria@gmail.com> 1482989930 +0530	commit: Added README
+868ea6567bf5bff9be61d0bdb4d99fc6439d62fd 29d9fe80cb94b82c1c9fcdee3cb0b7829641ebdf razzcoder <rajatsbhadauria@gmail.com> 1482990037 +0530	commit: Added README
+29d9fe80cb94b82c1c9fcdee3cb0b7829641ebdf 13d08e1c5134c8bde3a22390c89d183c3554a13e razzcoder <rajatsbhadauria@gmail.com> 1483126913 +0530	commit: Added KMP and Naive Substring Search Algo's
+13d08e1c5134c8bde3a22390c89d183c3554a13e 157a7aea66bebd6ab5bebe34c7c9a81ac5aa4118 razzcoder <rajatsbhadauria@gmail.com> 1483130574 +0530	commit: Added KMP and Naive Substring Search Algo's
+157a7aea66bebd6ab5bebe34c7c9a81ac5aa4118 8099e2db7573126086811ddc98a086892626ad45 razzcoder <rajatsbhadauria@gmail.com> 1483169300 +0530	commit: Added Rabin Karp Pattern Search
+8099e2db7573126086811ddc98a086892626ad45 249fe61f7378caff7f9df80979248445bbf53696 razzcoder <rajatsbhadauria@gmail.com> 1483287256 +0530	commit: Added LCM formula
+249fe61f7378caff7f9df80979248445bbf53696 6e0f306eb2d7074133e9164df4e731e3c5df2430 razzcoder <rajatsbhadauria@gmail.com> 1483297780 +0530	commit: Added Monk Edge Count Solution
+6e0f306eb2d7074133e9164df4e731e3c5df2430 5320bd8ca280797320963fc5cb79015b0d192902 razzcoder <rajatsbhadauria@gmail.com> 1484071105 +0530	commit: Added Z Algo
+5320bd8ca280797320963fc5cb79015b0d192902 5510c050d98b2f2235cb9236af831a1c0c94615a razzcoder <rajatsbhadauria@gmail.com> 1484273762 +0530	commit: Added TRie Data Structure
+5510c050d98b2f2235cb9236af831a1c0c94615a 1603019324137a948025254ce5c202172182e5b1 razzcoder <rajatsbhadauria@gmail.com> 1484401838 +0530	commit: HackerEarth Practice Questions
+1603019324137a948025254ce5c202172182e5b1 701e7351712f9ae437fad2255c740c568148b0e5 razzcoder <rajatsbhadauria@gmail.com> 1484419735 +0530	commit: Added Question for Array in HackerEarth
+701e7351712f9ae437fad2255c740c568148b0e5 94f7c04a9d4a686fa5e7ed30887359b3482ea006 razzcoder <rajatsbhadauria@gmail.com> 1484588391 +0530	commit: Added HE Array 1 D solution
+94f7c04a9d4a686fa5e7ed30887359b3482ea006 08f3cd2eca800c15328001507f5eaf35a9ffb154 razzcoder <rajatsbhadauria@gmail.com> 1484631424 +0530	commit: Added Nice Arch
+08f3cd2eca800c15328001507f5eaf35a9ffb154 e2d3c44cfdaeb8dff05f56e79c0c3812bfabbd7d razzcoder <rajatsbhadauria@gmail.com> 1484674697 +0530	commit: Added Nice Arches solution
+e2d3c44cfdaeb8dff05f56e79c0c3812bfabbd7d fa861c442249dfb0b69e8ba5e16435397b3a4c96 razzcoder <rajatsbhadauria@gmail.com> 1484674720 +0530	commit: Added Nice Arches solution
+fa861c442249dfb0b69e8ba5e16435397b3a4c96 e6c54af0776e2b74b4f8a8420d8f78e888521815 razzcoder <rajatsbhadauria@gmail.com> 1484792276 +0530	commit: Added Egg Dropping Problem
+e6c54af0776e2b74b4f8a8420d8f78e888521815 b7ced8a405f6b65a94dbc241bbb200bd8830b9b2 razzcoder <rajatsbhadauria@gmail.com> 1484792294 +0530	commit: Added Egg Dropping Problem and Kadane
+b7ced8a405f6b65a94dbc241bbb200bd8830b9b2 06c6ec331b353e380f1a841bcbaa6fd60045e5e9 razzcoder <rajatsbhadauria@gmail.com> 1485011604 +0530	commit: Added Unique Sub Array Solution
+06c6ec331b353e380f1a841bcbaa6fd60045e5e9 61eec74818f4fd7c17b162432205dee36ec88730 razzcoder <rajatsbhadauria@gmail.com> 1485116293 +0530	commit: Added AmazinG Race
+61eec74818f4fd7c17b162432205dee36ec88730 3371f8c6c8a2fe002101d31d76f47a68a73fae7e razzcoder <rajatsbhadauria@gmail.com> 1485430082 +0530	commit: Added Fredo Solution and FastIO Sample Template for reading Long numbers in java
+3371f8c6c8a2fe002101d31d76f47a68a73fae7e 53f5794bcba00722c7b820a758a726eea6cfbc12 razzcoder <rajatsbhadauria@gmail.com> 1485446955 +0530	commit: Added Subsets
+53f5794bcba00722c7b820a758a726eea6cfbc12 2369557b7d6bca7f4c4df25400f5dd38d9fcc51b razzcoder <rajatsbhadauria@gmail.com> 1485612051 +0530	commit: Trial by combat
+2369557b7d6bca7f4c4df25400f5dd38d9fcc51b 29a7f4c11ea9c0ce708bd540998c9f097aaef515 razzcoder <rajatsbhadauria@gmail.com> 1485619941 +0530	commit: Added Subset of a string using backtracking
+29a7f4c11ea9c0ce708bd540998c9f097aaef515 56c44b9883246c2aca4d66aec728bec2d8744fb6 razzcoder <rajatsbhadauria@gmail.com> 1485620125 +0530	commit: Correct the subset of array using backtracking
+56c44b9883246c2aca4d66aec728bec2d8744fb6 287390021a16b549f25c8779580d3f2cf8e40478 razzcoder <rajatsbhadauria@gmail.com> 1485620154 +0530	commit: Correct the subset of array using backtracking
+287390021a16b549f25c8779580d3f2cf8e40478 c39adbbbf82719f489a735488434fe58f52b1f6f razzcoder <rajatsbhadauria@gmail.com> 1485743298 +0530	commit: Added subset sum DP
+c39adbbbf82719f489a735488434fe58f52b1f6f dd36f1aed2b61edd05cae2905dee8c8cd664ecfe razzcoder <rajatsbhadauria@gmail.com> 1485743410 +0530	commit: Added subset sum DP
+dd36f1aed2b61edd05cae2905dee8c8cd664ecfe 7c057fbd08c45c6c3c137c0c93a1a0881b70499d razzcoder <rajatsbhadauria@gmail.com> 1485756183 +0530	commit: Added LCS
+7c057fbd08c45c6c3c137c0c93a1a0881b70499d bfa206a83f332fa8cb41c046b8bb62dfc5b26651 razzcoder <rajatsbhadauria@gmail.com> 1486001819 +0530	commit: Added Palindromic Subsequence
+bfa206a83f332fa8cb41c046b8bb62dfc5b26651 b2f3d60d9ea1ac3d4b6dfa7dd027979c2d90a16d razzcoder <rajatsbhadauria@gmail.com> 1486189538 +0530	commit: Added Optimal Binary Search Tree DP
+b2f3d60d9ea1ac3d4b6dfa7dd027979c2d90a16d 386ac7ecc50fff171a75a89255b408568aac25d1 razzcoder <rajatsbhadauria@gmail.com> 1486189744 +0530	commit: Added Optimal Binary Search Tree DP
+386ac7ecc50fff171a75a89255b408568aac25d1 1f3c59f96f64151097d8072ec3f2845da923994f razzcoder <rajatsbhadauria@gmail.com> 1486282985 +0530	commit: Added Edit Distance Solution
+1f3c59f96f64151097d8072ec3f2845da923994f 406f3ccb925cfd216188214e414402947bc03c4d razzcoder <rajatsbhadauria@gmail.com> 1486313954 +0530	commit: Added Akaash Assignment
+406f3ccb925cfd216188214e414402947bc03c4d eb28821fe025bbec13a5aa5e01f34300f04f63a2 razzcoder <rajatsbhadauria@gmail.com> 1486433140 +0530	commit: Added Weighted Job Scheduling
+eb28821fe025bbec13a5aa5e01f34300f04f63a2 785673709743038bbd38ce7b432cabe1a9de0aa9 razzcoder <rajatsbhadauria@gmail.com> 1486433256 +0530	commit: Added Weighted Job Scheduling
+785673709743038bbd38ce7b432cabe1a9de0aa9 e3aab687e9503fb9b8e3aa40a05c341857228d7e razzcoder <rajatsbhadauria@gmail.com> 1486491724 +0530	commit: Added Multid Monk and Operation
+e3aab687e9503fb9b8e3aa40a05c341857228d7e 2bb0a5be96d4a02ce7fb836f40c8f0fc6895a150 razzcoder <rajatsbhadauria@gmail.com> 1486827669 +0530	commit: Added Rod Cutting Problem and Saul Problem
+2bb0a5be96d4a02ce7fb836f40c8f0fc6895a150 6a2cecfa347f909fae616766b3baceaf6dd3f897 razzcoder <rajatsbhadauria@gmail.com> 1486904148 +0530	commit: Added some materail for Studying
+6a2cecfa347f909fae616766b3baceaf6dd3f897 059e02531d1fbcb71e4e71919542367bf3556eb7 razzcoder <rajatsbhadauria@gmail.com> 1487450503 +0530	commit: Added sub rectangular max sum
+059e02531d1fbcb71e4e71919542367bf3556eb7 440008eabb33be1875601f1d127bc825b7397223 razzcoder <rajatsbhadauria@gmail.com> 1487732489 +0530	commit: Added Stock Span Problem
+440008eabb33be1875601f1d127bc825b7397223 ee210dbdebe58e466fbdef626eefce5130288072 razzcoder <rajatsbhadauria@gmail.com> 1487737014 +0530	commit: Minimum Jump to reach end
+ee210dbdebe58e466fbdef626eefce5130288072 3305e3af6eca4bef13a16ee7cc97c61ad8a6d03a razzcoder <rajatsbhadauria@gmail.com> 1487737453 +0530	commit: Minimum Jump to reach end
+                                                                          

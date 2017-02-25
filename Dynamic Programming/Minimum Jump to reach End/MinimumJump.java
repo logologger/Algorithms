@@ -2,6 +2,11 @@ import java.io.*;
 import java.util.*;
 class JumptoReachEnd{
 	public static void main(String args[]){
+		 JumptoReachEnd mj = new JumptoReachEnd();
+        int arr[] = {1,3,5,3,2,2,6,1,6,8,9};
+        int r[] = new int[arr.length];
+		int result = mj.minJump(arr,r);
+		System.out.println(result);
 
 	}
 	public int minJump(int arr[],int result[]){

@@ -18,46 +18,33 @@ class LittleShino {
         int n=s.scanInt();
         int a[]=new int[n];
         int b[]=new int[n];
-        Stack<Integer> stack=new Stack<>();
+        //Stack<Integer> stack=new Stack<>();
         for(int i=0;i<n;i++){
             a[i]=s.scanInt();
-            b[i]=a[i];
+            
 
          
     }
-   // Arrays.sort(a);
+    int result=0;
+   Stack<Integer> stack=new Stack<>();
+   for(int i=0;i<n;i++){
+	   	
+	   		while(!stack.isEmpty() && a[i]>stack.peek()){
+	   			stack.pop();
+	   			result++;
+	   		}
+	   		if(!stack.isEmpty()){
+	   			result++;
+	   		}
+	   		
+	   		stack.add(a[i]);
+	   		
 
 
-    for(int i=0;i<n;i++){
-
-
-        
-        if(!stack.isEmpty() && stack.peek()!=a[i]){
-
-                stack.add(a[i]);
-        }
-        else if(stack.isEmpty()){
-            stack.add(a[i]);
-        }
-    }
-    Arrays.sort(a);
-    int first=0;
-    int second=0;
-    for(int i=0;i<n;i++){
-        if(a[0]==b[i]){
-            first=i;
-        }
-        if(a[1]==b[i]){
-            second=i;
-        }
-    }
-
-    //System.out.println(Math.abs(second-first));
-    if(a.toString()==b.toString())
-        System.out.println(stack.size()-1);
-    else
-
-    System.out.println(stack.size()-1+Math.abs(second-first)-1);
+	   	}
+   
+   System.out.println(result);
+    
 
         }
 }
