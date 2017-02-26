@@ -231,13 +231,18 @@ Programming Contest Lectures
 
 https://www.youtube.com/watch?v=zLe822AEpx0&list=PL06D0AE2C26C9123B&index=5
 
+Excellent Tips for Interview Preparation from this link
+
+https://github.com/andreis/interview
 
 
 
 
 
+This Person explains at its best for algorithms in some problems although it is C++ but who minds it
 
-
+http://comproguide.blogspot.in/
+www.letuscode.in
 
 
 
