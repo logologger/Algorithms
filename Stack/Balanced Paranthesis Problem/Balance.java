@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.IOException;
 import java.io.InputStream;
  
-class LittleMonkBalancedPara {
+class Balance {
     
     public static void main(String args[] ) throws Exception {
        
@@ -30,7 +30,6 @@ class LittleMonkBalancedPara {
             for(int i=0;i<n;i++){ 
                
  
-                   //if(!stack.isEmpty() && a[stack.peek()]!=a[i] &&  Math.abs(a[stack.peek()])==Math.abs(a[i]) && a[i]<0 && a[stack.peek()]>0){
                        if(a[i]<0){
 
                         int p=stack.peek();
@@ -55,24 +54,14 @@ class LittleMonkBalancedPara {
                     }
                     else{
                        
-                        // ind++;
-                        // if(ind>=2){
-                        //     if(result1>result)
-                        //         result1=result;
-                            
-                                
-                        //     result=0;
-                        //     ind=0;
-                        // }
+                       
                         stack.add(i);
                         
                     }
  
                 
             }
-            // if(result1>result)
-            // System.out.println(result1);
-            // else
+           
              System.out.println(result);
             
             
