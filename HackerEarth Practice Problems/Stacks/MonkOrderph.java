@@ -43,6 +43,7 @@ class MonkOrderph {
 
          
     }
+    StringBuilder sb=new StringBuilder();
    int Q=s.scanInt();
    for(int i=0;i<Q;i++){
    	int type=s.scanInt();
@@ -68,26 +69,86 @@ class MonkOrderph {
     else{
     	
     	int first_ele=tree.first();
-    	System.out.println("Came "+i+" "+al.get(0)+"  "+al.get(1)+" "+first_ele+"  "+al.get(1).getFirst());
+    	//System.out.println("Came "+i+" "+al.get(0)+"  "+al.get(1)+" "+first_ele+"  "+al.get(1).getFirst());
     	int indicator=0;
+    	int temp_ele=first_ele;
     	for(int j=1;j<later_t;j++){
     		//
-    		if(al.get(j).getFirst()<first_ele){
-    			indicator=1;
-    			break;
+    		// if(al.get(j).getFirst()<first_ele){
+    		// 	indicator=1;
+    		// 	break;
 
-    		}
+    		// }
+    		ArrayDeque<Integer> temp_stack_2=al.get(j);
+    		ArrayDeque<Integer> temp_stack=(ArrayDeque<Integer>)temp_stack_2.clone();
+
+    			if(!temp_stack.isEmpty() && temp_stack.getLast()<temp_ele){
+
+    				indicator=0;
+    				break;
+    			}
+    			else{
+
+
+    				ArrayList<Integer> ali=new ArrayList<>(temp_stack);
+    				//Binary Search will be of different type here
+    				
+    		// 		int last_one=0;
+
+    		// 		//Apply binary search in the sorted stack
+
+    		// while(!temp_stack.isEmpty()){
+
+    		// 	indicator=1;
+
+    		// 	int ele=temp_stack.removeLast();
+    		// 	if(ele<temp_ele){
+
+    		// 		temp_ele=last_one;
+	
+    		// 		break;
+    		// 	}
+    		// 	else{
+
+    		// 		last_one=ele;
+
+    				
+    		// 		//temp_ele=ele;
+
+    		// 	}
+
+
+
+
+    		// }
     	}
-    	if(indicator==0){
-    		System.out.println("YES");
+    		// for(Integer ele:al.get(j)){
+    		// 	//System.out.print(ele);
+    		// 	if(ele>temp_ele){
+    		// 		//System.out.println(ele +"  "+temp_ele);
+    		// 		temp_ele=ele;
+    		// 		indicator=1;
+    		// 		break;
+    		// 	}
+    			
+    		// }
+    		if(indicator==0){
+    			break;
+    		}
+    		//System.out.println();
+    	}
+    	//System.out.println(al.get(1));
+    	if(indicator==1){
+    		sb.append("YES\n");
 
     	}
     	else{
-    		System.out.println("NO");
+    		sb.append("NO\n");
 
     	}
     }
    	}
+   	System.out.print(sb.toString());
    }
 }
  
