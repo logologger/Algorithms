@@ -4,6 +4,20 @@ import java.io.OutputStreamWriter;
 import java.util.*;
 import java.io.IOException;
 import java.io.InputStream;
+
+
+class MonkElement{
+    int index;
+    int value;
+    MonkElement(){
+        index=0;
+        value=0;
+    }
+    @Override
+    public String toString() {
+        return String.format(" "+value);
+    }
+}
  
 class MonkChamber {
     public static void main(String args[] ) throws Exception {
@@ -14,18 +28,75 @@ class MonkChamber {
         Scan s = new Scan();
         int n=s.scanInt();
         int x=s.scanInt();
-        Deque<HashMap> deque = new ArrayDeque<HashMap>();
-        
+
+        Deque<MonkElement> deque = new ArrayDeque<MonkElement>();
+        Deque<MonkElement> temp_deque = new ArrayDeque<MonkElement>();
+         
         for(int i=0;i<n;i++){
-            HashMap<Integer,Integer> map=new HashMap<>();
-            map.put(i+1,s.scanInt());
-            deque.add(map);
+
+            MonkElement me=new MonkElement();
+
+            me.index=i+1;
+            me.value=s.scanInt();
+           
+            
+            deque.add(me);//kya chutiyapa hae yeh
+
+        }
+        ArrayList<Integer> result=new ArrayList<>();
+        
+        while(deque.size()!=0){
+            int max=-1;
+            int max_index=0;
+            int ind=0;
+
+            for(int i=0;i<x && deque.size()!=0;i++){
+
+                MonkElement me=new MonkElement();
+                me=deque.removeFirst();
+                temp_deque.add(me);
+
+                if(me.value>max){
+                    // if(me.value==max){
+                    //     ind=1;
+                    // }
+                    max=me.value;
+                    max_index=me.index;
+                }
+               
+                
+            }
+            result.add(max_index);
+            for(int i=1;i<=x && temp_deque.size()!=0;i++){
+                if(temp_deque.peek().index!=max_index){
+                    MonkElement me=new MonkElement();
+                    me.index=temp_deque.peek().index;
+
+                    me.value=temp_deque.peek().value-1>0?temp_deque.peek().value-1:0;
+                    deque.add(me);
+                }
+
+                     temp_deque.removeFirst();
+            // }
+            // else{
+            //     temp_deque.removeFirst();
+            // }
+
+            }
+            
+
+           // System.out.println(deque);
+            //int a=s.scanInt();
+            //System.out.println(result);
+            //Add all -1 keeping 
+
+
 
         }
 
-        while(true){
+        for(int i=0;i<x;i++)
 
-        }
+            System.out.print(result.get(i)+" ");
 
          
          
