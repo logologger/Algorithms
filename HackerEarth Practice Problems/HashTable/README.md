@@ -56,3 +56,26 @@ This Approach will take O(n^2) time
     But If you implement it using hashMap find whether the rem=(sum-input) is there in the hashMap then it will be straight forewar approach which runs in O(n) time.
 
 </p>
+
+<h3> Mind Palaces Problem </h3>
+
+<p> This is one of the excellent problems that uses Algorithm Approach </p>
+
+<p><i>https://www.youtube.com/watch?v=0-rX-Wocuew</i></p>
+
+<p>First thing to get is to see that the 2D array is sorted.Now sorted means Binary Search ...
+Binary Search Tecnhique is good but maximum complexity is O(nlogn)  ...If we go through the diagnol approach...
+then also it takes O(n ki power 1.324) something like this
+</p>
+
+<p>
+<h4>Now Comes Step Down Algorithm 
+</h4>
+This Approach is helpful it runs in O(n) time only.
+
+Go to the top right place in your 2D Matrix ...
+
+If the element there is equal to the query then ok stop ...else if element is less then go down or left based on the less then or greater the situation of the array ..Whether the array is sorted in Descending order or Ascending order.
+
+<i>Whenever you see Sorted 2D Matrix try this approach ...The Video also contains the best description for this Algorithm</i>
+</p>
