@@ -43,3 +43,16 @@ public class ValueComparator<T> implements Comparator<T> {
 
 
 ```
+
+
+<h3> Pair Sum Problem </h3>
+
+
+<p>This Problem is unique in the way that you need to find the pair which sum to some specific number </p>
+<p>Normal Approach would be to iterate through an entire for loop and find which pair sums to some specific sum
+This Approach will take O(n^2) time
+</p>
+<p>
+    But If you implement it using hashMap find whether the rem=(sum-input) is there in the hashMap then it will be straight forewar approach which runs in O(n) time.
+
+</p>
