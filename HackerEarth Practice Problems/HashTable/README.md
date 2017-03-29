@@ -77,5 +77,29 @@ Go to the top right place in your 2D Matrix ...
 
 If the element there is equal to the query then ok stop ...else if element is less then go down or left based on the less then or greater the situation of the array ..Whether the array is sorted in Descending order or Ascending order.
 
+```java
+while(column>=0 && row<n){
+            
+        if(a[row][column]==q){
+            System.out.println((row)+" "+(column));
+            ind=1;
+            break;
+
+        }
+        else if(a[row][column]<q){
+
+            //go down
+            row=row+1;
+
+        }
+        else{
+            column=column-1;
+
+            //go up
+
+        }
+    }
+```
+
 <i>Whenever you see Sorted 2D Matrix try this approach ...The Video also contains the best description for this Algorithm</i>
 </p>
