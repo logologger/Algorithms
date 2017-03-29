@@ -1,3 +1,5 @@
+<h2>Comparator in HashMap</h2>
+
 Came to now about ValueComparator in hashMap from this link 
 
 http://stackoverflow.com/questions/17533272/how-to-make-a-generic-valuecomparator-for-sorting-multiple-hashmaps
@@ -5,9 +7,9 @@ http://stackoverflow.com/questions/17533272/how-to-make-a-generic-valuecomparato
 
 It's a good concept of how you want your hashMap to be implemented 
 
-LinkedHashMap ---Maintains the order --- the way it is inserted and the way it is poped out will be same
+<b>LinkedHashMap</b> ---Maintains the order --- the way it is inserted and the way it is poped out will be same
 
-TreeMap -- Mantains the sorted order in HashMap
+<b>TreeMap</b> -- Mantains the sorted order in HashMap
 
 
 Using Comparator we can mantain the way we want 
