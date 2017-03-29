@@ -13,6 +13,7 @@ TreeMap -- Mantains the sorted order in HashMap
 Using Comparator we can mantain the way we want 
 
 like 
+```java
 
 Map<Broker, Integer> brokerSalesCountList = new HashMap<Broker, Integer>();
 
@@ -37,3 +38,6 @@ public class ValueComparator<T> implements Comparator<T> {
     }
 
 }
+
+
+```
