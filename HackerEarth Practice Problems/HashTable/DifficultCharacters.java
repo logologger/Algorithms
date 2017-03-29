@@ -10,15 +10,84 @@ class DifficultCharacters {
         Print print = new Print();
         Scan s = new Scan();
         
-    //Iterate through the hashTable and give counts for all the characters
+        //Iterate through the hashTable and give counts for all the characters
         int n=s.scanInt();
+        while(n-->0){
         String str=s.scanString();
 
-        HashTable<Character,Integer> hs=new HashTable<>();
-        for(int i='a';i<='b';i++){
-            hs.put(i,1);
+        Hashtable<Character,Integer> hs=new Hashtable<>();
+        for(int i='a';i<='z';i++){
+
+            Character ch=new Character((char)i);
+            hs.put(ch,1);
         }
-        System.out.println(hs);
+        for(int i=0;i<str.length();i++){
+            Character ch=new Character(str.charAt(i));
+            hs.put(ch,hs.get(ch)+1);
+        }
+       //One can use ValueComparator for sorting elements here
+
+        Map<Integer,ArrayList<Character>> hsa=new TreeMap<>();
+        for(Map.Entry m : hs.entrySet()){
+
+           
+            if(hsa.get((int)m.getValue())==null)
+            {
+
+                ArrayList<Character> al=new ArrayList<>();
+               
+                al.add(Character.valueOf((char)m.getKey()));
+                hsa.put((int)m.getValue(),al);
+
+            }
+            else{
+
+                  ArrayList<Character> al=hsa.get((int)m.getValue());
+                 
+                  al.add(Character.valueOf((char)m.getKey()));
+                  hsa.put((int)m.getValue(),al);
+
+
+            }
+            
+
+        }
+
+         Map<Integer,ArrayList<Character>> lhsa=new LinkedHashMap<>();
+
+         lhsa.putAll(hsa);
+
+         
+
+        
+        for(Map.Entry m : lhsa.entrySet()){
+            
+            Stack<Character> stack=new Stack<>();
+           
+
+            ArrayList<Character> al_3=(ArrayList)m.getValue();
+          
+            Collections.sort(al_3);
+
+          
+            for(Character ch:al_3){
+
+                stack.add(ch);
+
+            }
+
+
+        while(!stack.isEmpty()){
+            System.out.print(stack.pop()+" ");
+        }
+
+        }
+        
+       //Iterate through the array List and get them in stack and print it
+        System.out.println();
+
+        //System.out.println(hsa);
+    }
 
         }
 }
