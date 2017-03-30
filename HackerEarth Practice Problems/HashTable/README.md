@@ -103,3 +103,36 @@ while(column>=0 && row<n){
 
 <i>Whenever you see Sorted 2D Matrix try this approach ...The Video also contains the best description for this Algorithm</i>
 </p>
+
+<h2>XSquare Palindrom</h2>
+<p>
+Question was easy ..Need to find how to make a string palindrom  by deleting or adding characters and reshuffling ..
+Deleting and adding cost is 1.
+
+You need to find number of characters need to add so that the string becomes palindrome.
+
+..So count the frequencey of each characters ...find all letters that have odd frequency ..Except one odd character no other odd character is allowed ..Thus Answer will <b><i>number of odd character-1</i> </b>
+
+```java
+
+ Hashtable<Character,Integer> hs=getHashTable(str);
+             int sum=0;
+             for(Map.Entry m:hs.entrySet()){
+
+                //You need one odd and all even frequency word
+
+                if( (int)m.getValue()%2!=0){
+
+                    sum=sum+1;
+                }
+
+             }
+             if(sum!=0){
+                System.out.println(sum-1);
+             }
+             else{
+                System.out.println(sum);
+             }
+
+```
+</p>
