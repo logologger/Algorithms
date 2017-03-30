@@ -105,6 +105,7 @@ while(column>=0 && row<n){
 </p>
 
 <h2>XSquare Palindrom</h2>
+<hr>
 <p>
 Question was easy ..Need to find how to make a string palindrom  by deleting or adding characters and reshuffling ..
 Deleting and adding cost is 1.
