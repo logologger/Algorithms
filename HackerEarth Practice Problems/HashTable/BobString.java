@@ -4,7 +4,7 @@ import java.util.*;
 import java.io.IOException;
 import java.io.InputStream;
  
-class XSquarPalin {
+class BobString {
     public static void main(String args[] ) throws Exception {
        
  
@@ -15,24 +15,19 @@ class XSquarPalin {
 
         for(int i=0;i<n;i++){
              String str=s.scanString();
+             String str1=s.scanString();
              Hashtable<Character,Integer> hs=getHashTable(str);
+             Hashtable<Character,Integer> hs1=getHashTable(str1);
+             
              int sum=0;
-             for(Map.Entry m:hs.entrySet()){
-
-                //You need one odd and all even frequency word
-
-                if( (int)m.getValue()%2!=0){
-
-                    sum=sum+1;
-                }
-
+             for(int t='a';t<'z';t++){
+                Character ch=new Character((char)t);
+                int first_value=hs.get(ch)!=null ? hs.get(ch):0;
+                int second_value=hs1.get(ch)!=null ? hs1.get(ch):0;
+                sum+=Math.abs(first_value-second_value);
              }
-             if(sum!=0){
-                System.out.println(sum-1);
-             }
-             else{
-                System.out.println(sum);
-             }
+             System.out.println(sum);
+             
 
         }
 
