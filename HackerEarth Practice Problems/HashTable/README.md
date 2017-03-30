@@ -140,3 +140,20 @@ You need to find number of characters need to add so that the string becomes pal
 
 <h2>Bob and String</h2>
 <i><a href="https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/bob-and-string-easy/">Problem Link</a></i>
+
+<p>It's an easy approach that counts the difference between the frequency of all characters from 1 to 127..means all the 
+characters that are present in the string</p>
+```java
+String str=s.scanString();
+             String str1=s.scanString();
+             Hashtable<Character,Integer> hs=getHashTable(str);
+             Hashtable<Character,Integer> hs1=getHashTable(str1);
+             
+             int sum=0;
+             for(int t=0;t<127;t++){
+                Character ch=new Character((char)t);
+                int first_value=hs.get(ch)!=null ? hs.get(ch):0;
+                int second_value=hs1.get(ch)!=null ? hs1.get(ch):0;
+                sum+=Math.abs(first_value-second_value);
+             }
+```

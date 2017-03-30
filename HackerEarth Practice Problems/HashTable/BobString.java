@@ -20,7 +20,7 @@ class BobString {
              Hashtable<Character,Integer> hs1=getHashTable(str1);
              
              int sum=0;
-             for(int t='a';t<'z';t++){
+             for(int t=0;t<127;t++){
                 Character ch=new Character((char)t);
                 int first_value=hs.get(ch)!=null ? hs.get(ch):0;
                 int second_value=hs1.get(ch)!=null ? hs1.get(ch):0;
