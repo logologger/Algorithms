@@ -104,8 +104,8 @@ while(column>=0 && row<n){
 <i>Whenever you see Sorted 2D Matrix try this approach ...The Video also contains the best description for this Algorithm</i>
 </p>
 
-<h2>XSquare Palindrom</h2>
-<hr>
+<h2>XSquare Palindrome</h2>
+<i><a href="">Problem Link</a></i>
 <p>
 Question was easy ..Need to find how to make a string palindrom  by deleting or adding characters and reshuffling ..
 Deleting and adding cost is 1.
@@ -137,3 +137,6 @@ You need to find number of characters need to add so that the string becomes pal
 
 ```
 </p>
+
+<h2>Bob and String</h2>
+<i><a href="https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/bob-and-string-easy/">Problem Link</a></i>
