@@ -143,8 +143,9 @@ You need to find number of characters need to add so that the string becomes pal
 
 <p>It's an easy approach that counts the difference between the frequency of all characters from 1 to 127..means all the 
 characters that are present in the string</p>
+
 ```java
-String str=s.scanString();
+             String str=s.scanString();
              String str1=s.scanString();
              Hashtable<Character,Integer> hs=getHashTable(str);
              Hashtable<Character,Integer> hs1=getHashTable(str1);
@@ -156,4 +157,5 @@ String str=s.scanString();
                 int second_value=hs1.get(ch)!=null ? hs1.get(ch):0;
                 sum+=Math.abs(first_value-second_value);
              }
+
 ```
