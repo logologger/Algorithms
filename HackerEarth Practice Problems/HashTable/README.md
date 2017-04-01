@@ -186,3 +186,24 @@ String str1=s.scanString();
 
 
 ```
+
+
+<h2>MARUT AND GIRLS</h2>
+<i><a href="https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/marut-and-girls/">Problem Link</a></i>
+<p>The Problem says that Marut has some Qualities ...and there are some girls who want to marry Marut ...but he will marry only when the girl has the qualities which marut ...</p>
+<p>So Given Girls Qualities ..Count the number of girls which Marut can marry</p>
+<p>He can marry only when the girls have all the qualities which Marut has</p>
+
+```java
+
+
+while(st.hasMoreTokens()){
+                hs.put(Integer.parseInt(st.nextToken()),1);//Get the Girls Qualities in HashTable
+            }
+            for(int j=0;j<n;j++){
+                if(hs.get(a[j])==null){ //If any of the Qualities which boys have are not there in Girls then that girl is not eligible
+                    ind=1;
+                }
+            }
+
+```
