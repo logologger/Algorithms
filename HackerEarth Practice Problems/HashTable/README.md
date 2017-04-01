@@ -159,3 +159,30 @@ characters that are present in the string</p>
              }
 
 ```
+
+<h2>Alien Language</h2>
+<i><a href="https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/alien-language/">Problem Link</a></i>
+
+<p>The Problem say given two strings .tell whether the second string is a substring of first string </p>
+<p>The String will be of small Characters only ..so iterate from a to z and find if there is any character in second which is present in both the string ..then second string is a substring of first string</p>
+
+``` java
+String str1=s.scanString();
+             String str2=s.scanString();
+             
+             Hashtable<Character,Integer> hs1=getHashTable(str1);
+             Hashtable<Character,Integer> hs2=getHashTable(str2);
+
+             int ind=0;
+             for(int j=97;j<=122;j++){
+                Character ch=new Character((char)j);
+                if(hs1.get(ch)!=null && hs2.get(ch)!=null)
+                {
+                    System.out.println("YES");
+                    ind=1;
+                    break;
+                }
+             }
+
+
+```
