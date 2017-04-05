@@ -188,7 +188,7 @@ String str1=s.scanString();
 ```
 
 
-<h2>MARUT AND GIRLS</h2>
+<h2>Marut and Girls</h2>
 <i><a href="https://www.hackerearth.com/practice/data-structures/hash-tables/basics-of-hash-tables/practice-problems/algorithm/marut-and-girls/">Problem Link</a></i>
 <p>The Problem says that Marut has some Qualities ...and there are some girls who want to marry Marut ...but he will marry only when the girl has the qualities which marut ...</p>
 <p>So Given Girls Qualities ..Count the number of girls which Marut can marry</p>

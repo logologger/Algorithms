@@ -10,6 +10,7 @@ class SampleTemplat{
 		//
 		
 		
+		
 }//End of main function 
 }//End of Class
 class Scan
