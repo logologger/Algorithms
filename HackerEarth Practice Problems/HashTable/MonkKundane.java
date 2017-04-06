@@ -18,7 +18,7 @@
 
             Hashtable<Character,Integer> hs=new Hashtable<>();
             hs=getHash();
-           // System.out.println(hs);
+           // System.out.println(hs);cd 
 
             int t=Integer.parseInt(in.readLine());
 
