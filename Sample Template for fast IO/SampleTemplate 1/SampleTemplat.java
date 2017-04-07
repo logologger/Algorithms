@@ -7,6 +7,7 @@ class SampleTemplat{
 		Scan scan=new Scan();
 		Print print=new Print();
 		BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(System.out));
+		
 		//
 		
 		

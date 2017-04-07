@@ -13,7 +13,7 @@
     		Reader in = new Reader();
     		//OutputStream out = new BufferedOutputStream ( System.out );
     		PrintWriter out = new PrintWriter(System.out);
-
+        
 
             //String option is missing here
     		
