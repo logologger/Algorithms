@@ -40,19 +40,22 @@ class RemoveFriends {
     public static void deleteFriend(List<Integer> friend, int k, int count) {
 
         boolean delFrd = false;
-
-        for (int i = 0; i < friend.size() - 1; i++) {
+        int i=0;
+        for ( i = 0; i < friend.size()-1 ; ) {
             if (friend.get(i) < friend.get(i + 1)) {
                 //Delete ith Friend
                 count++;
-                i=friend.indexOf(friend.get(i))-1;
+                
                 friend.remove(i);
-                System.out.print(i);
+                if(i!=0)
+                i=i-1;
+                //System.out.print(i);
                 //Again set the i to i-1
                 //i=i-1;
                 // delFrd=true;
                 // break;
                 if (k == count) {
+                    
                     delFrd = true;
 
                     break;
@@ -60,7 +63,11 @@ class RemoveFriends {
                 }
 
             }
+            else{
+                i++;
+            }
         }
+        //System.out.print(friend+" "+i+" "+count);
         // System.out.print(friend);
         if (delFrd == false) {
             //Means remove the last k elements
