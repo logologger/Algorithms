@@ -15,29 +15,64 @@ class RemoveFriends {
         while (t-- > 0) {
             int n = s.scanInt();
             int k = s.scanInt();
-            List<Integer> friend = new ArrayList<>();
+
+
+
+            int a[]=new int[n];
+            // List<Integer> friend = new ArrayList<>();
             for (int i = 0; i < n; i++) {
-                friend.add(s.scanInt());
+                a[i]=s.scanInt();
 
             }
-            //k is the number of friends he want to remove
-            int count = 0;
-            // while(count!=k){
-            //     //Keep on deleting until count reaches k
-            //     //
-            deleteFriend(friend, k, count);
-            // count++;
-            //  }
-            for (int i = 0; i < friend.size(); i++) {
-                sb.append(friend.get(i) + " ");
+            Stack<Integer> stack=new Stack<>();
+            stack.push(a[0]);
+            int deleted_friend=0;
+            for(int i=1;i<n;i++){
+
+
+            	while(!stack.isEmpty() && stack.peek()<a[i] && deleted_friend<k){
+            		stack.pop();
+            		deleted_friend++;
+            	}
+            	stack.push(a[i]);
+
             }
-            sb.append("\n");
+            //if k is not equal to deleted friend
+            for(int i=0;i<k-deleted_friend;i++){
+            	stack.pop();
+            }
+
+            //print the stack in reverse
+            Stack<Integer> reverse_stack=new Stack<>();
+            while(!stack.isEmpty()){
+
+            	reverse_stack.push(stack.pop());
+
+            }
+            while(!reverse_stack.isEmpty()){
+
+            	System.out.print(reverse_stack.pop()+" ");
+
+            }
+            System.out.println();
+
+            // //k is the number of friends he want to remove
+            // int count = 0;
+            // // while(count!=k){
+            // //     //Keep on deleting until count reaches k
+            // //     //
+            // deleteFriend(friend, k, count);
+            // // count++;
+            //  }
+          
         }
-        System.out.print(sb.toString());
+       
 
     }
 
     public static void deleteFriend(List<Integer> friend, int k, int count) {
+
+    	//deprecated
 
         boolean delFrd = false;
         int i=0;
