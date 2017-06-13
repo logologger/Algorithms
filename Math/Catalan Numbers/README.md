@@ -35,3 +35,6 @@ Number of stack-sortable permutations of {1, …, n}. A permutation w is called 
 
 
 Number of permutations of {1, …, n} that avoid the pattern 123 (or any of the other patterns of length 3); that is, the number of permutations with no three-term increasing subsequence. For n = 3, these permutations are 132, 213, 231, 312 and 321. For n = 4, they are 1432, 2143, 2413, 2431, 3142, 3214, 3241, 3412, 3421, 4132, 4213, 4231, 4312 and 4321
+
+
+<p>The best explanation is given in the following wikipedia link<a href="https://en.wikipedia.org/wiki/Catalan_number">Link for Explanation with Diagrams</a></p>
