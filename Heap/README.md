@@ -22,3 +22,7 @@ What is Heap ?</b>
 Max-Heap is one in which root is greater then left and right
 
 </p>
+
+<b>What is Min-Heap then ?</b>
+
+<p>Min Heap is one in which root is lesser then left and right</p>
