@@ -9,7 +9,7 @@ Yes. We have few methods to do this. Out of them matrix exponentiation is most c
 
 
 <p>Source:  <i>https://www.hackerearth.com/practice/notes/fast-doubling-method-to-find-nth-fibonacci-number/</i></p>
-<p>Proof</p>: <i>https://math.stackexchange.com/questions/1124590/need-help-understanding-fibonacci-fast-doubling-proof</i>
+<p>Proof:<i>https://math.stackexchange.com/questions/1124590/need-help-understanding-fibonacci-fast-doubling-proof</i></p>
 
 <p>https://www.nayuki.io/page/fast-fibonacci-algorithms</p>
 
