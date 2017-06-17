@@ -1,3 +1,4 @@
+<h2>Pythagorean Triplets</h2>
 This Question is taken from the following link <a href="http://www.geeksforgeeks.org/find-pythagorean-triplet-in-an-unsorted-array/">Link</a>
 
 <p>
