@@ -1,7 +1,8 @@
 This Question is taken from the following link <a href="http://www.geeksforgeeks.org/find-pythagorean-triplet-in-an-unsorted-array/">Link</a>
 
 <p>
-There are two logics to this Question either Iterate Directly three times to find that pair by generating each and every pair 
+
+		There are two logics to this Question either Iterate Directly three times to find that pair by generating each and every pair 
 </p>
 
 <p>
