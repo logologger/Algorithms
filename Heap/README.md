@@ -2,7 +2,7 @@
 </p>
 
 <p>
-https://www.youtube.com/watch?v=2fA1FdxNqiE
+			<a href="https://www.youtube.com/watch?v=2fA1FdxNqiE">Tutorial link</a>
 </p>
 
 <b>Problem : </b><p>http://www.geeksforgeeks.org/k-largestor-smallest-elements-in-an-array/</p>
@@ -46,6 +46,13 @@ Max-Heap is one in which root is greater then left and right
 <li>
 	
 	Complete Binary Tree -- It is a concept that says that a parent can have only two children or 0 but not one
+</li>
+<li>
+		Leaves are already the heap --(Means their are already greater then left and right subtree(which is not present))
+		<p>
+			In a complete binary tree |n/2|+1 to n elemets are all leaves
+		</p>
+
 </li>
 </ul>
 
