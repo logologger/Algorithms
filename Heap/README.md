@@ -80,6 +80,7 @@ public int extractMax(){
 
 
 <h3>Max heapify </h3>
+
 ```java
  public void maxHeapify(int i){
         
