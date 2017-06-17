@@ -50,9 +50,9 @@ Max-Heap is one in which root is greater then left and right
 <li>
 
 		Leaves are already the heap --(Means their are already greater then left and right subtree(which is not present))
-		<p>
-			In a complete binary tree |n/2|+1 to n elemets are all leaves
-		</p>
+		
+		In a complete binary tree |n/2|+1 to n elemets are all leaves
+		
 
 </li>
 </ul>
