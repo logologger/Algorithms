@@ -30,7 +30,11 @@ Max-Heap is one in which root is greater then left and right
 <p>Two Things we should considered in Heap Data structure</p>
 <ul>
 <li>
+
+
 	ExtractMax --Get the maximum element from the root of the heap tree
+
+
 </li>
 <li>
 	
