@@ -48,6 +48,7 @@ Max-Heap is one in which root is greater then left and right
 	Complete Binary Tree -- It is a concept that says that a parent can have only two children or 0 but not one
 </li>
 <li>
+
 		Leaves are already the heap --(Means their are already greater then left and right subtree(which is not present))
 		<p>
 			In a complete binary tree |n/2|+1 to n elemets are all leaves
